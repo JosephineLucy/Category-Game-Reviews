@@ -1,0 +1,66 @@
+.Review-Gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Review-Card {
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    margin: 40px;
+    }
+
+.Review-Card-Header {
+    font-size: 2rem;
+    height: 50px;
+}
+
+
+
+.Review-Card-Image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.Review-Card-Owner-Date-Wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Review-Card-Owner {
+    font-size: 1.3rem;
+}
+
+.Review-Card-Owner-Name {
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+.Review-Card-Date {
+    font-size: 1.2rem;   
+}
+
+.Review-Card-Category-Votes-Wrapper {
+    display: flex;
+    flex-direction: row;
+   
+}
+
+.Review-Card-Category {
+    margin-right: 20px;
+}
+
+.Review-Tab {
+    border: solid grey 1px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 12px;
+}
+
+.Review-Tab-Text {
+    margin: 0;
+}
