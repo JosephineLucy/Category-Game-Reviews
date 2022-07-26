@@ -1,16 +1,38 @@
-// import axios from "axios";
-// import { useState, useEffect } from "react";
-// import { getCategoryList } from "../api";
-import { Routes, Route, Link } from "react-router-dom";
-import IndividualCategory from "./IndividualCategory";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../css/QueryBar.css";
+import { getCategoryList } from "../api";
 
 const QueryBar = () => {
+  const [categoryList, setCatergoryList] = useState([]);
+
+  useEffect(() => {
+    getCategoryList().then((res) => {
+      setCatergoryList(res.data.categories);
+    });
+  }, []);
+
   return (
     <nav className="QueryBar">
-      <Link className="Tab-QueryBar" to={"/categories/strategy"}>
-        Strategy Games
-      </Link>
+      {categoryList.map((category) => {
+        return (
+          <Link
+            key={category.slug}
+            className="Tab-QueryBar"
+            to={`/categories/${category.slug}`}
+          >
+            {category.slug} Games
+          </Link>
+        );
+      })}
+    </nav>
+  );
+};
+
+export default QueryBar;
+
+/*
+
       <Link className="Tab-QueryBar" to={"/categories/hidden-roles"}>
         Hidden-Roles Games
       </Link>
@@ -26,8 +48,5 @@ const QueryBar = () => {
       <Link className="Tab-QueryBar" to={"/categories/engine-building"}>
         Engine-Building Games
       </Link>
-    </nav>
-  );
-};
 
-export default QueryBar;
+*/

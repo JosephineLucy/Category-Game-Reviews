@@ -2,13 +2,12 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import ReviewCard from "./ReviewCard";
 import "../css/IndividualCategory.css";
+import { useParams } from "react-router-dom";
 
 const IndividualCategory = () => {
   const [reviews, setReviews] = useState([]);
 
-  let path = document.location.pathname;
-  let pathSplit = path.split("/");
-  const category = pathSplit[2];
+  const { category } = useParams();
 
   useEffect(() => {
     axios
@@ -18,7 +17,7 @@ const IndividualCategory = () => {
       .then((results) => {
         setReviews(results.data.reviews);
       });
-  }, []);
+  }, [category]);
 
   return (
     <section>

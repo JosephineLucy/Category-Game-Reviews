@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ReviewCard from "./ReviewCard";
-import QueryBar from "./QueryBar.jsx";
 
 export default function ReviewGallery() {
   const [reviews, setReviews] = useState([]);
@@ -16,7 +15,6 @@ export default function ReviewGallery() {
 
   return (
     <section className="Review-Gallery">
-      <QueryBar reviews={reviews} setReviews={setReviews} />
       {reviews.map((review) => {
         return (
           <ReviewCard
