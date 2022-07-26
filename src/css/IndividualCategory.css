@@ -1,0 +1,4 @@
+.Category-Title {
+    display: flex;
+    flex-direction: column;
+}

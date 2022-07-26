@@ -1,22 +1,30 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ReviewCard from "./ReviewCard";
-import QueryBar from "./QueryBar.jsx";
+import "../css/IndividualCategory.css";
 
-export default function ReviewGallery() {
+const IndividualCategory = () => {
   const [reviews, setReviews] = useState([]);
+
+  let path = document.location.pathname;
+  let pathSplit = path.split("/");
+  const category = pathSplit[2];
 
   useEffect(() => {
     axios
-      .get("https://josies-games.herokuapp.com/api/reviews")
+      .get(
+        `https://josies-games.herokuapp.com/api/reviews?category=${category}`
+      )
       .then((results) => {
         setReviews(results.data.reviews);
       });
   }, []);
 
   return (
-    <section className="Review-Gallery">
-      <QueryBar reviews={reviews} setReviews={setReviews} />
+    <section>
+      <div className="Category-Title">
+        <h2>{category}</h2>
+      </div>
       {reviews.map((review) => {
         return (
           <ReviewCard
@@ -36,4 +44,6 @@ export default function ReviewGallery() {
       })}
     </section>
   );
-}
+};
+
+export default IndividualCategory;
