@@ -21,6 +21,7 @@ export default function ReviewCard({
     let joinedFormattedDate = dateArray.join("");
     let formattedDate = joinedFormattedDate.split("-").reverse().join("-");
     return formattedDate;
+    
   }
 
   return (
