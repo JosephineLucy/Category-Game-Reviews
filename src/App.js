@@ -1,13 +1,22 @@
+import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import ReviewGallery from "./Components/ReviewGallery";
+import IndividualCategory from "./Components/IndividualCategory";
+import QueryBar from "./Components/QueryBar";
 
 function App() {
   return (
     <div className="App">
-      <header>
-        <h1 className="App-Title">NC Game Reviews</h1>
-      </header>
-      <ReviewGallery />
+      <Link to={"/"}>
+        <header>
+          <h1 className="App-Title">NC Game Reviews</h1>
+        </header>
+      </Link>
+      <QueryBar />
+      <Routes>
+        <Route path="/categories/:category" element={<IndividualCategory />} />
+        <Route path="/" element={<ReviewGallery />}></Route>
+      </Routes>
     </div>
   );
 }

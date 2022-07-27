@@ -1,20 +1,29 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ReviewCard from "./ReviewCard";
+import "../css/IndividualCategory.css";
+import { useParams } from "react-router-dom";
 
-export default function ReviewGallery() {
+const IndividualCategory = () => {
   const [reviews, setReviews] = useState([]);
+
+  const { category } = useParams();
 
   useEffect(() => {
     axios
-      .get("https://josies-games.herokuapp.com/api/reviews")
+      .get(
+        `https://josies-games.herokuapp.com/api/reviews?category=${category}`
+      )
       .then((results) => {
         setReviews(results.data.reviews);
       });
-  }, []);
+  }, [category]);
 
   return (
-    <section className="Review-Gallery">
+    <section>
+      <div className="Category-Title">
+        <h2>{category}</h2>
+      </div>
       {reviews.map((review) => {
         return (
           <ReviewCard
@@ -34,4 +43,6 @@ export default function ReviewGallery() {
       })}
     </section>
   );
-}
+};
+
+export default IndividualCategory;

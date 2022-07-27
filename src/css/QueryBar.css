@@ -1,0 +1,17 @@
+.QueryBar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+
+.Tab-QueryBar {
+    border: solid grey 1px;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    height: 30px;
+    text-decoration: none;
+    color: black;
+}
