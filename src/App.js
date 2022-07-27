@@ -22,32 +22,3 @@ function App() {
 }
 
 export default App;
-
-/*
-
- <Route
-          path="/categories/hidden-roles"
-          element={<IndividualCategory />}
-        ></Route>
-        <Route
-          path="/categories/dexterity"
-          element={<IndividualCategory />}
-        ></Route>
-        <Route
-          path="/categories/push-your-luck"
-          element={<IndividualCategory />}
-        ></Route>
-        <Route
-          path="/categories/roll-and-write"
-          element={<IndividualCategory />}
-        ></Route>
-        <Route
-          path="/categories/deck-building"
-          element={<IndividualCategory />}
-        ></Route>
-        <Route
-          path="/categories/engine-building"
-          element={<IndividualCategory />}
-        ></Route>
-
-*/

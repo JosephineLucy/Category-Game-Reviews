@@ -30,23 +30,3 @@ const QueryBar = () => {
 };
 
 export default QueryBar;
-
-/*
-
-      <Link className="Tab-QueryBar" to={"/categories/hidden-roles"}>
-        Hidden-Roles Games
-      </Link>
-      <Link className="Tab-QueryBar" to={"/categories/push-your-luck"}>
-        Push-Your-Luck Games
-      </Link>
-      <Link className="Tab-QueryBar" to={"/categories/roll-and-write"}>
-        Roll-and-Write Games
-      </Link>
-      <Link className="Tab-QueryBar" to={"/categories/deck-building"}>
-        Deck-Building Games
-      </Link>
-      <Link className="Tab-QueryBar" to={"/categories/engine-building"}>
-        Engine-Building Games
-      </Link>
-
-*/
