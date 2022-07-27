@@ -3,6 +3,7 @@ import "./App.css";
 import ReviewGallery from "./Components/ReviewGallery";
 import IndividualCategory from "./Components/IndividualCategory";
 import QueryBar from "./Components/QueryBar";
+import IndividualReview from "./Components/IndividualReview";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/categories/:category" element={<IndividualCategory />} />
         <Route path="/" element={<ReviewGallery />}></Route>
+        <Route path="/reviews/:ID" element={<IndividualReview />}></Route>
       </Routes>
     </div>
   );
