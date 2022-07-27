@@ -1,42 +1,31 @@
 import "../css/ReviewCard.css";
 import ReviewTab from "./ReviewTab";
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { formatDate } from "../api";
 
-export default function ReviewCard({
-  review,
-  title,
-  ID,
-  designer,
-  owner,
-  image,
-  body,
-  category,
-  dateCreated,
-  votes,
-}) {
-  function formatDate(date) {
-    let dateArray = [];
-    for (let i = 0; i < 10; i++) {
-      dateArray.push(date[i]);
-    }
-    let joinedFormattedDate = dateArray.join("");
-    let formattedDate = joinedFormattedDate.split("-").reverse().join("-");
-    return formattedDate;
-    
-  }
-
+export default function ReviewCard({ review }) {
   return (
     <section className="Review-Card">
-      <img className="Review-Card-Image" src={image} alt={title} />
-      <h2 className="Review-Card-Header">{title}</h2>
+      <Link to={`/reviews/${review.review_id}`}>
+        <img
+          className="Review-Card-Image"
+          src={review.review_img_url}
+          alt={review.title}
+        />
+      </Link>
+      <Link to={`/reviews/${review.review_id}`}>
+        <h2 className="Review-Card-Header">{review.title}</h2>
+      </Link>
       <section className="Review-Card-Owner-Date-Wrapper">
         <p className="Review-Card-Owner">
-          by <span className="Review-Card-Owner-Name">{owner}</span>
+          by <span className="Review-Card-Owner-Name">{review.owner}</span>
         </p>
-        <p className="Review-Card-Date">{formatDate(dateCreated)}</p>
+        <p className="Review-Card-Date">{formatDate(review.created_at)}</p>
       </section>
       <section className="Review-Card-Category-Votes-Wrapper">
-        <ReviewTab text={`category: ${category}`} />
-        <ReviewTab text={`votes: ${votes}`} />
+        <ReviewTab text={`category: ${review.category}`} />
+        <ReviewTab text={`votes: ${review.votes}`} />
       </section>
     </section>
   );
