@@ -10,26 +10,65 @@ const IndividualReview = () => {
   const { ID } = useParams();
   const [review, setReview] = useState({});
   const [comments, setComments] = useState([]);
-
-  console.log(ID, "<<ID");
+  const [votes, setVotes] = useState(0);
+  const [err, setErr] = useState(null);
 
   useEffect(() => {
     axios
       .get(`https://josies-games.herokuapp.com/api/reviews/${ID}`)
       .then((res) => {
         setReview(res.data.review);
+        setVotes(res.data.review.votes);
       });
-  }, [ID]);
+  }, [ID, votes]);
+
+  console.log(votes, "<<<votes");
 
   useEffect(() => {
     axios
       .get(`https://josies-games.herokuapp.com/api/reviews/${ID}/comments`)
       .then((res) => {
-        console.log(res.data.comments, "<<<<res.data.comments");
         setComments(res.data.comments);
       });
   }, [review]);
 
+  function downVoteClick() {
+    setVotes((current) => current - 1);
+    axios
+      .patch(`https://josies-games.herokuapp.com/api/reviews/${ID}`, {
+        inc_votes: -1,
+      })
+      .then(() => {
+        console.log("fulfilled");
+        setErr(null);
+      })
+      .catch((err) => {
+        console.log(err);
+        setVotes((current) => current + 1);
+        setErr("Sorry, something went wrong. Please try again.");
+      });
+  }
+
+  function upVoteClick() {
+    setVotes((current) => current + 1);
+    axios
+      .patch(`https://josies-games.herokuapp.com/api/reviews/${ID}`, {
+        inc_votes: 1,
+      })
+      .then(() => {
+        console.log("fulfilled");
+        setErr(null);
+      })
+      .catch((err) => {
+        console.log(err);
+        setVotes((current) => current - 1);
+        setErr("Sorry, something went wrong. Please try again.");
+      });
+  }
+
+  if (err) return <p>{err}</p>;
+
+  console.log(formatDate(review.created_at));
   return (
     <section>
       <img
@@ -38,13 +77,13 @@ const IndividualReview = () => {
         alt={review.title}
       />
 
-      <h2 className="Review-Card-Header">{review.title}</h2>
+      <h2 className="Review-Card-Title">{review.title}</h2>
 
       <section className="Review-Card-Owner-Date-Wrapper">
         <p className="Review-Card-Owner">
           by <span className="Review-Card-Owner-Name">{review.owner}</span>
         </p>
-        <p className="Review-Card-Date">{review.created_at}</p>
+        <p className="Review-Card-Date">{formatDate(review.created_at)}</p>
       </section>
       <section className="Review-Card-Category-Votes-Wrapper">
         <ReviewTab text={`category: ${review.category}`} />
@@ -62,6 +101,14 @@ const IndividualReview = () => {
         ) : (
           <CommentTab text="There are no comments yet, check back later!" />
         )}
+      </section>
+      <section className="Vote-Buttons">
+        <button className="Up-Vote" onClick={upVoteClick}>
+          Up Vote
+        </button>
+        <button className="Down-Vote" onClick={downVoteClick}>
+          Down Vote
+        </button>
       </section>
     </section>
   );

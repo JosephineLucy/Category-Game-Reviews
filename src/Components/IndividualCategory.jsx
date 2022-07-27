@@ -21,26 +21,25 @@ const IndividualCategory = () => {
 
   return (
     <section>
-      <div className="Category-Title">
-        <h2>{category}</h2>
-      </div>
-      {reviews.map((review) => {
-        return (
-          <ReviewCard
-            key={review.review_id}
-            review={review}
-            ID={review.review_id}
-            title={review.title}
-            designer={review.designer}
-            owner={review.owner}
-            image={review.review_img_url}
-            body={review.review_body}
-            category={review.category}
-            dateCreated={review.created_at}
-            votes={review.votes}
-          />
-        );
-      })}
+      <section className="Gallery">
+        {reviews.map((review) => {
+          return (
+            <ReviewCard
+              key={review.review_id}
+              review={review}
+              ID={review.review_id}
+              title={review.title}
+              designer={review.designer}
+              owner={review.owner}
+              image={review.review_img_url}
+              body={review.review_body}
+              category={review.category}
+              dateCreated={review.created_at}
+              votes={review.votes}
+            />
+          );
+        })}
+      </section>
     </section>
   );
 };
