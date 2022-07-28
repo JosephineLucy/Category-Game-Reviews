@@ -12,31 +12,27 @@ const IndividualReview = () => {
   const [comments, setComments] = useState([]);
   const [votes, setVotes] = useState(0);
   const [err, setErr] = useState(null);
+  const [reviewLoading, setReviewLoading] = useState(true);
 
   useEffect(() => {
     axios
       .get(`https://josies-games.herokuapp.com/api/reviews/${ID}`)
       .then((res) => {
         setReview(res.data.review);
-        setVotes(res.data.review.votes);
+        setReviewLoading(false);
       });
-  }, [ID, votes]);
-
-  console.log(votes, "<<<votes");
-
-  useEffect(() => {
     axios
       .get(`https://josies-games.herokuapp.com/api/reviews/${ID}/comments`)
       .then((res) => {
         setComments(res.data.comments);
       });
-  }, [review]);
+  }, [ID]);
 
-  function downVoteClick() {
-    setVotes((current) => current - 1);
+  function voteClick(number) {
+    setVotes((current) => current + number);
     axios
       .patch(`https://josies-games.herokuapp.com/api/reviews/${ID}`, {
-        inc_votes: -1,
+        inc_votes: number,
       })
       .then(() => {
         console.log("fulfilled");
@@ -44,31 +40,15 @@ const IndividualReview = () => {
       })
       .catch((err) => {
         console.log(err);
-        setVotes((current) => current + 1);
-        setErr("Sorry, something went wrong. Please try again.");
-      });
-  }
-
-  function upVoteClick() {
-    setVotes((current) => current + 1);
-    axios
-      .patch(`https://josies-games.herokuapp.com/api/reviews/${ID}`, {
-        inc_votes: 1,
-      })
-      .then(() => {
-        console.log("fulfilled");
-        setErr(null);
-      })
-      .catch((err) => {
-        console.log(err);
-        setVotes((current) => current - 1);
+        setVotes((current) => current - number);
         setErr("Sorry, something went wrong. Please try again.");
       });
   }
 
   if (err) return <p>{err}</p>;
 
-  console.log(formatDate(review.created_at));
+  if (reviewLoading) return <p>Page Loading</p>;
+
   return (
     <section>
       <img
@@ -85,10 +65,6 @@ const IndividualReview = () => {
         </p>
         <p className="Review-Card-Date">{formatDate(review.created_at)}</p>
       </section>
-      <section className="Review-Card-Category-Votes-Wrapper">
-        <ReviewTab text={`category: ${review.category}`} />
-        <ReviewTab text={`votes: ${review.votes}`} />
-      </section>
       <section className="Review-Body">
         <p>{review.review_body}</p>
       </section>
@@ -102,11 +78,25 @@ const IndividualReview = () => {
           <CommentTab text="There are no comments yet, check back later!" />
         )}
       </section>
+      <section className="Review-Card-Category-Votes-Wrapper">
+        <ReviewTab text={`category: ${review.category}`} />
+        <ReviewTab text={`votes: ${votes + review.votes}`} />
+      </section>
       <section className="Vote-Buttons">
-        <button className="Up-Vote" onClick={upVoteClick}>
+        <button
+          className="Up-Vote"
+          onClick={() => {
+            voteClick(1);
+          }}
+        >
           Up Vote
         </button>
-        <button className="Down-Vote" onClick={downVoteClick}>
+        <button
+          className="Down-Vote"
+          onClick={() => {
+            voteClick(-1);
+          }}
+        >
           Down Vote
         </button>
       </section>
