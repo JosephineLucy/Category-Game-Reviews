@@ -9,7 +9,12 @@ export function getReviews() {
 }
 
 export function formatDate(date) {
+  if (date === undefined) {
+    return;
+  }
+
   let dateArray = [];
+
   for (let i = 0; i < 10; i++) {
     dateArray.push(date[i]);
   }
