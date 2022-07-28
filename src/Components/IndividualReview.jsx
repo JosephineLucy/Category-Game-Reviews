@@ -28,7 +28,28 @@ const IndividualReview = () => {
         console.log(res.data.comments, "<<<<res.data.comments");
         setComments(res.data.comments);
       });
-  }, [review]);
+  }, [ID]);
+
+  function voteClick(number) {
+    setVotes((current) => current + number);
+    axios
+      .patch(`https://josies-games.herokuapp.com/api/reviews/${ID}`, {
+        inc_votes: number,
+      })
+      .then(() => {
+        console.log("fulfilled");
+        setErr(null);
+      })
+      .catch((err) => {
+        console.log(err);
+        setVotes((current) => current - number);
+        setErr("Sorry, something went wrong. Please try again.");
+      });
+  }
+
+  if (err) return <p>{err}</p>;
+
+  if (reviewLoading) return <p className="Loading-Page">Page Loading</p>;
 
   return (
     <section>
