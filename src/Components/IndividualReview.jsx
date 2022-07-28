@@ -10,22 +10,20 @@ const IndividualReview = () => {
   const { ID } = useParams();
   const [review, setReview] = useState({});
   const [comments, setComments] = useState([]);
-
-  console.log(ID, "<<ID");
+  const [votes, setVotes] = useState(0);
+  const [err, setErr] = useState(null);
+  const [reviewLoading, setReviewLoading] = useState(true);
 
   useEffect(() => {
     axios
       .get(`https://josies-games.herokuapp.com/api/reviews/${ID}`)
       .then((res) => {
         setReview(res.data.review);
+        setReviewLoading(false);
       });
-  }, [ID]);
-
-  useEffect(() => {
     axios
       .get(`https://josies-games.herokuapp.com/api/reviews/${ID}/comments`)
       .then((res) => {
-        console.log(res.data.comments, "<<<<res.data.comments");
         setComments(res.data.comments);
       });
   }, [ID]);
@@ -59,17 +57,13 @@ const IndividualReview = () => {
         alt={review.title}
       />
 
-      <h2 className="Review-Card-Header">{review.title}</h2>
+      <h2 className="Review-Card-Title">{review.title}</h2>
 
       <section className="Review-Card-Owner-Date-Wrapper">
         <p className="Review-Card-Owner">
           by <span className="Review-Card-Owner-Name">{review.owner}</span>
         </p>
-        <p className="Review-Card-Date">{review.created_at}</p>
-      </section>
-      <section className="Review-Card-Category-Votes-Wrapper">
-        <ReviewTab text={`category: ${review.category}`} />
-        <ReviewTab text={`votes: ${review.votes}`} />
+        <p className="Review-Card-Date">{formatDate(review.created_at)}</p>
       </section>
       <section className="Review-Body">
         <p>{review.review_body}</p>
@@ -83,6 +77,28 @@ const IndividualReview = () => {
         ) : (
           <CommentTab text="There are no comments yet, check back later!" />
         )}
+      </section>
+      <section className="Review-Card-Category-Votes-Wrapper">
+        <ReviewTab text={`category: ${review.category}`} />
+        <ReviewTab text={`votes: ${votes + review.votes}`} />
+      </section>
+      <section className="Vote-Buttons">
+        <button
+          className="Up-Vote"
+          onClick={() => {
+            voteClick(1);
+          }}
+        >
+          Up Vote
+        </button>
+        <button
+          className="Down-Vote"
+          onClick={() => {
+            voteClick(-1);
+          }}
+        >
+          Down Vote
+        </button>
       </section>
     </section>
   );

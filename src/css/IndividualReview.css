@@ -10,6 +10,51 @@
     padding: 20px;
     }
 
+.Review-Card-Title {
+    font-size: 2rem;
+    height: 50px;
+    color: #597dd8;
+}
+
 .Comments-Section-Title {
     font-size: 1.2rem;
+}
+
+.Review-Card-Category-Votes-Wrapper {
+    margin-bottom: 8px;
+}
+
+.Vote-Buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.Up-Vote {
+    margin: 5px;
+    color: white;
+    background-color: #597dd8;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.Up-Vote:active {
+    color: white;
+    background-color: #597dd8;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.Down-Vote {
+    margin: 5px;
+    color: white;
+    background-color: #597dd8;
+    border-radius: 5px;
+    height: 40px;
+}
+
+.Down-Vote:active {
+    color: white;
+    background-color: #597dd8;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
