@@ -14,6 +14,7 @@ const IndividualReview = () => {
   const [votes, setVotes] = useState(0);
   const [err, setErr] = useState(null);
   const [reviewLoading, setReviewLoading] = useState(true);
+  const [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {
     axios
@@ -27,10 +28,11 @@ const IndividualReview = () => {
       .then((res) => {
         setComments(res.data.comments);
       });
-  }, [ID, comments]);
+  }, [ID]);
 
   function voteClick(number) {
     setVotes((current) => current + number);
+    setIsClicked(true);
     axios
       .patch(`https://josies-games.herokuapp.com/api/reviews/${ID}`, {
         inc_votes: number,
@@ -80,7 +82,7 @@ const IndividualReview = () => {
           <CommentTab text="There are no comments yet, check back later or click below to be the first to comment!" />
         )}
       </section>
-      <AddComment ID={ID} />
+      <AddComment setComments={setComments} comments={comments} ID={ID} />
       <section className="Review-Card-Category-Votes-Wrapper">
         <ReviewTab text={`category: ${review.category}`} />
         <ReviewTab text={`votes: ${votes + review.votes}`} />

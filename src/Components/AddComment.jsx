@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "../css/AddComment.css";
 
-export default function AddComment({ ID }) {
+export default function AddComment({ ID, comments, setComments }) {
   const [isClicked, setIsClicked] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [err, setErr] = useState(null);
@@ -25,10 +25,15 @@ export default function AddComment({ ID }) {
       )
       .then(() => {
         setIsClicked(false);
-        setIsSending(false);
-        setSuccess("You posted a comment!");
-        setErr(null);
-        console.log("success");
+        axios
+          .get(`https://josies-games.herokuapp.com/api/reviews/${ID}/comments`)
+          .then((res) => {
+            setComments(res.data.comments);
+            setIsSending(false);
+            setSuccess("You posted a comment!");
+            setErr(null);
+            console.log("success");
+          });
       })
       .catch((err) => {
         setIsClicked(false);
