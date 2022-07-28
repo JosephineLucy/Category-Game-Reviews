@@ -1,0 +1,20 @@
+.User-List {
+    margin: 30px;;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.User-Tab {
+    border: solid grey 1px;
+    padding: 10px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    width:100px;
+}
+
+.User-Icon {
+    height: 30px;
+    width: 30px;
+}

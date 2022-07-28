@@ -6,18 +6,24 @@ import { useParams } from "react-router-dom";
 
 const IndividualCategory = () => {
   const [reviews, setReviews] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const { category } = useParams();
 
   useEffect(() => {
+    setIsLoading(true);
     axios
       .get(
         `https://josies-games.herokuapp.com/api/reviews?category=${category}`
       )
       .then((results) => {
         setReviews(results.data.reviews);
+        setIsLoading(false);
       });
   }, [category]);
+
+  if (isLoading)
+    return <p className="Loading-Page">Page loading, please wait...</p>;
 
   return (
     <section>

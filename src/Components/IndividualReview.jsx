@@ -5,6 +5,7 @@ import { formatDate } from "../api";
 import ReviewTab from "./ReviewTab";
 import "../css/IndividualReview.css";
 import CommentTab from "./CommentTab";
+import AddComment from "./AddComment";
 
 const IndividualReview = () => {
   const { ID } = useParams();
@@ -13,6 +14,7 @@ const IndividualReview = () => {
   const [votes, setVotes] = useState(0);
   const [err, setErr] = useState(null);
   const [reviewLoading, setReviewLoading] = useState(true);
+  const [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {
     axios
@@ -30,6 +32,7 @@ const IndividualReview = () => {
 
   function voteClick(number) {
     setVotes((current) => current + number);
+    setIsClicked(true);
     axios
       .patch(`https://josies-games.herokuapp.com/api/reviews/${ID}`, {
         inc_votes: number,
@@ -47,7 +50,8 @@ const IndividualReview = () => {
 
   if (err) return <p>{err}</p>;
 
-  if (reviewLoading) return <p className="Loading-Page">Page Loading</p>;
+  if (reviewLoading)
+    return <p className="Loading-Page">Page loading, please wait...</p>;
 
   return (
     <section>
@@ -75,9 +79,10 @@ const IndividualReview = () => {
             return <CommentTab text={comment.body} />;
           })
         ) : (
-          <CommentTab text="There are no comments yet, check back later!" />
+          <CommentTab text="There are no comments yet, check back later or click below to be the first to comment!" />
         )}
       </section>
+      <AddComment setComments={setComments} comments={comments} ID={ID} />
       <section className="Review-Card-Category-Votes-Wrapper">
         <ReviewTab text={`category: ${review.category}`} />
         <ReviewTab text={`votes: ${votes + review.votes}`} />

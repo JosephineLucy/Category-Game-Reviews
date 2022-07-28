@@ -4,14 +4,20 @@ import ReviewCard from "./ReviewCard";
 
 export default function ReviewGallery() {
   const [reviews, setReviews] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     axios
       .get("https://josies-games.herokuapp.com/api/reviews")
       .then((results) => {
         setReviews(results.data.reviews);
+        setIsLoading(false);
       });
   }, []);
+
+  if (isLoading)
+    return <p className="Loading-Page">Page loading, please wait...</p>;
 
   return (
     <section className="Review-Gallery">
