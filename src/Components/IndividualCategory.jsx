@@ -11,15 +11,11 @@ const IndividualCategory = ({ orderBy, sortBy }) => {
   const { category } = useParams();
   useEffect(() => {
     setIsLoading(true);
-    console.log(category, "<<<category");
-    console.log(sortBy, "<<<sort by");
-    console.log(orderBy, "<<<order");
     axios
       .get(
         `https://josies-games.herokuapp.com/api/reviews?category=${category}&&order=${orderBy}&&sort_by=${sortBy}`
       )
       .then((res) => {
-        console.log(res.data.reviews, "<<<reviews");
         setReviews(res.data.reviews);
         setIsLoading(false);
       });

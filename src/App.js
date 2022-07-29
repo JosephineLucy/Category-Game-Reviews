@@ -1,7 +1,5 @@
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import ReviewGallery from "./Components/ReviewGallery";
-import IndividualCategory from "./Components/IndividualCategory";
 import QueryBar from "./Components/QueryBar";
 import IndividualReview from "./Components/IndividualReview";
 import SelectUser from "./Components/SelectUser";
@@ -41,6 +39,7 @@ function App() {
           <Route path="/categories/:category" element={<FilterByCategory />} />
           <Route path="/" element={<Home />}></Route>
           <Route path="/reviews/:ID" element={<IndividualReview />}></Route>
+          <Route path="/"></Route>
         </Routes>
       </div>
     </UserContext.Provider>
