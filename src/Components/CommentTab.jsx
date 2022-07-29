@@ -4,7 +4,7 @@ import { UserContext } from "../Context/User";
 import axios from "axios";
 import { formatDate } from "../api";
 
-const CommentTab = ({ text, author, id, date }) => {
+const CommentTab = ({ text, author, id, date, setIsDeleted }) => {
   const { user } = useContext(UserContext);
   const [isSending, setIsSending] = useState(false);
   const [err, setErr] = useState(null);
@@ -22,6 +22,7 @@ const CommentTab = ({ text, author, id, date }) => {
       .then(() => {
         setIsSending(false);
         setSuccess("This comment has been successfully deleted");
+        setIsDeleted(true);
         setErr(null);
         console.log("success");
       })

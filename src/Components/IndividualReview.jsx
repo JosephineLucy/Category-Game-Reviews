@@ -15,6 +15,7 @@ const IndividualReview = () => {
   const [err, setErr] = useState(null);
   const [reviewLoading, setReviewLoading] = useState(true);
   const [isClicked, setIsClicked] = useState(false);
+  const [isDeleted, setIsDeleted] = useState(false);
 
   useEffect(() => {
     axios
@@ -28,7 +29,7 @@ const IndividualReview = () => {
       .then((res) => {
         setComments(res.data.comments);
       });
-  }, [ID]);
+  }, [ID, isDeleted]);
 
   function voteClick(number) {
     setVotes((current) => current + number);
@@ -83,6 +84,7 @@ const IndividualReview = () => {
                 text={comment.body}
                 author={comment.author}
                 date={comment.created_at}
+                setIsDeleted={setIsDeleted}
               />
             );
           })
