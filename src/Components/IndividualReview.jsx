@@ -76,7 +76,14 @@ const IndividualReview = () => {
         <p className="Comments-Section-Title">Comments</p>
         {comments.length > 0 ? (
           comments.map((comment) => {
-            return <CommentTab text={comment.body} />;
+            return (
+              <CommentTab
+                key={comment.comment_id}
+                id={comment.comment_id}
+                text={comment.body}
+                author={comment.author}
+              />
+            );
           })
         ) : (
           <CommentTab text="There are no comments yet, check back later or click below to be the first to comment!" />

@@ -1,0 +1,18 @@
+.User-Profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.User-Title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 15px;
+    flex-wrap: wrap;
+}
+
+.User-Profile-Icon {
+    height: 200px;
+    width: 200px;
+}
