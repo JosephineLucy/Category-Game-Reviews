@@ -15,6 +15,7 @@ const IndividualReview = () => {
   const [err, setErr] = useState(null);
   const [reviewLoading, setReviewLoading] = useState(true);
   const [isClicked, setIsClicked] = useState(false);
+  const [isDeleted, setIsDeleted] = useState(false);
 
   useEffect(() => {
     axios
@@ -28,7 +29,7 @@ const IndividualReview = () => {
       .then((res) => {
         setComments(res.data.comments);
       });
-  }, [ID]);
+  }, [ID, isDeleted]);
 
   function voteClick(number) {
     setVotes((current) => current + number);
@@ -76,7 +77,16 @@ const IndividualReview = () => {
         <p className="Comments-Section-Title">Comments</p>
         {comments.length > 0 ? (
           comments.map((comment) => {
-            return <CommentTab text={comment.body} />;
+            return (
+              <CommentTab
+                key={comment.comment_id}
+                id={comment.comment_id}
+                text={comment.body}
+                author={comment.author}
+                date={comment.created_at}
+                setIsDeleted={setIsDeleted}
+              />
+            );
           })
         ) : (
           <CommentTab text="There are no comments yet, check back later or click below to be the first to comment!" />

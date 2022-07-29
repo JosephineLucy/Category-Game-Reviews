@@ -7,6 +7,7 @@ import { UserContext } from "./Context/User";
 import { useState } from "react";
 import Home from "./Components/Home";
 import FilterByCategory from "./Components/FilterByCategory";
+import UserProfile from "./Components/UserProfile";
 
 function App() {
   const [user, setUser] = useState({
@@ -30,7 +31,10 @@ function App() {
               alt={`${user.username} avatar`}
             />
             <p>{user.username}</p>
-            <Link to={"/select-user"}>Change User</Link>
+
+            <Link to={"/select-user"}>
+              Not you? <br></br> Change user
+            </Link>
           </section>
         </header>
         <QueryBar />
@@ -39,7 +43,10 @@ function App() {
           <Route path="/categories/:category" element={<FilterByCategory />} />
           <Route path="/" element={<Home />}></Route>
           <Route path="/reviews/:ID" element={<IndividualReview />}></Route>
-          <Route path="/"></Route>
+          <Route
+            path={`/user/${user.username}`}
+            element={<UserProfile />}
+          ></Route>
         </Routes>
       </div>
     </UserContext.Provider>
