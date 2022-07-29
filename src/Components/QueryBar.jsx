@@ -13,19 +13,24 @@ const QueryBar = () => {
   }, []);
 
   return (
-    <nav className="QueryBar">
-      {categoryList.map((category) => {
-        return (
-          <Link
-            key={category.slug}
-            className="Tab-QueryBar"
-            to={`/categories/${category.slug}`}
-          >
-            {category.slug} Games
-          </Link>
-        );
-      })}
-    </nav>
+    <section className="Queries">
+      <nav className="QueryBar">
+        <Link className="Tab-QueryBar" to="/">
+          all Categories
+        </Link>
+        {categoryList.map((category) => {
+          return (
+            <Link
+              key={category.slug}
+              className="Tab-QueryBar"
+              to={`/categories/${category.slug}`}
+            >
+              {category.slug} Games
+            </Link>
+          );
+        })}
+      </nav>
+    </section>
   );
 };
 

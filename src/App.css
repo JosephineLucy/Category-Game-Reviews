@@ -9,9 +9,10 @@ header {
     background-color: white;
     height: 200px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    justify-content: space-between;
     text-decoration: none;
+    padding: 10px;
+  align-items: center;
 }
 
 .App-Title {

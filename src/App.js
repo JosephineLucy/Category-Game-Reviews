@@ -7,6 +7,7 @@ import IndividualReview from "./Components/IndividualReview";
 import SelectUser from "./Components/SelectUser";
 import { UserContext } from "./Context/User";
 import { useState } from "react";
+import Home from "./Components/Home";
 
 function App() {
   const [user, setUser] = useState({
@@ -23,12 +24,15 @@ function App() {
           <Link to={"/"}>
             <h1 className="App-Title">NC Game Reviews</h1>
           </Link>
-          <Link to={"/select-user"}>Select User</Link>
-          <img
-            className="User-Icon"
-            src={user.avatar_url}
-            alt={`${user.username} avatar`}
-          />
+          <section className="User-Info">
+            <img
+              className="User-Icon"
+              src={user.avatar_url}
+              alt={`${user.username} avatar`}
+            />
+            <p>{user.username}</p>
+            <Link to={"/select-user"}>Change User</Link>
+          </section>
         </header>
         <QueryBar />
         <Routes>
@@ -37,7 +41,7 @@ function App() {
             path="/categories/:category"
             element={<IndividualCategory />}
           />
-          <Route path="/" element={<ReviewGallery />}></Route>
+          <Route path="/" element={<Home />}></Route>
           <Route path="/reviews/:ID" element={<IndividualReview />}></Route>
         </Routes>
       </div>

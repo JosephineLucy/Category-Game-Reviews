@@ -21,3 +21,14 @@
     color:white;
     background-color: #597dd8;;
 }
+
+.Sort-Reviews {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.select {
+    margin-right: 10px;
+}
