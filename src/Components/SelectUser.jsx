@@ -9,7 +9,6 @@ export default function SelectUser() {
 
   useEffect(() => {
     axios.get("https://josies-games.herokuapp.com/api/users").then((res) => {
-      console.log(res.data.users);
       setUsers(res.data.users);
     });
   }, []);

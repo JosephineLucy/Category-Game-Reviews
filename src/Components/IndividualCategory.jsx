@@ -4,23 +4,22 @@ import ReviewCard from "./ReviewCard";
 import "../css/IndividualCategory.css";
 import { useParams } from "react-router-dom";
 
-const IndividualCategory = () => {
+const IndividualCategory = ({ orderBy, sortBy }) => {
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const { category } = useParams();
-
   useEffect(() => {
     setIsLoading(true);
     axios
       .get(
-        `https://josies-games.herokuapp.com/api/reviews?category=${category}`
+        `https://josies-games.herokuapp.com/api/reviews?category=${category}&&order=${orderBy}&&sort_by=${sortBy}`
       )
-      .then((results) => {
-        setReviews(results.data.reviews);
+      .then((res) => {
+        setReviews(res.data.reviews);
         setIsLoading(false);
       });
-  }, [category]);
+  }, [orderBy, sortBy, category]);
 
   if (isLoading)
     return <p className="Loading-Page">Page loading, please wait...</p>;
