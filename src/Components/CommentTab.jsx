@@ -2,12 +2,15 @@ import "../css/CommentTab.css";
 import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../Context/User";
 import axios from "axios";
+import { formatDate } from "../api";
 
-const CommentTab = ({ text, author, id }) => {
+const CommentTab = ({ text, author, id, date }) => {
   const { user } = useContext(UserContext);
   const [isSending, setIsSending] = useState(false);
   const [err, setErr] = useState(null);
   const [success, setSuccess] = useState(null);
+
+  const formattedDate = formatDate(date);
 
   function handleDelete(e) {
     e.preventDefault();
@@ -31,6 +34,8 @@ const CommentTab = ({ text, author, id }) => {
 
   return (
     <section className="Comment-Tab">
+      <p>{formattedDate}</p>
+      <p>{author} says:</p>
       <p className="Comment-Tab-Text">{text}</p>
       {user.username === author ? (
         <button

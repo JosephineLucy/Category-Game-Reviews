@@ -82,6 +82,7 @@ const IndividualReview = () => {
                 id={comment.comment_id}
                 text={comment.body}
                 author={comment.author}
+                date={comment.created_at}
               />
             );
           })
