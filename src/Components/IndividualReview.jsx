@@ -14,7 +14,7 @@ const IndividualReview = () => {
   const [votes, setVotes] = useState(0);
   const [err, setErr] = useState(null);
   const [reviewLoading, setReviewLoading] = useState(true);
-  const [isClicked, setIsClicked] = useState(false);
+
   const [isDeleted, setIsDeleted] = useState(false);
 
   useEffect(() => {
@@ -33,7 +33,6 @@ const IndividualReview = () => {
 
   function voteClick(number) {
     setVotes((current) => current + number);
-    setIsClicked(true);
     axios
       .patch(`https://josies-games.herokuapp.com/api/reviews/${ID}`, {
         inc_votes: number,

@@ -1,5 +1,5 @@
 import "../css/CommentTab.css";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "../Context/User";
 import axios from "axios";
 import { formatDate } from "../api";

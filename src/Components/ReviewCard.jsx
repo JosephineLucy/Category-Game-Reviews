@@ -1,7 +1,6 @@
 import "../css/ReviewCard.css";
 import ReviewTab from "./ReviewTab";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
 import { formatDate } from "../api";
 
 export default function ReviewCard({ review }) {
