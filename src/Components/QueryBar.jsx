@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../css/QueryBar.css";
-import { getCategoryList } from "../api";
+import { getCategoryList, formatCategory } from "../api";
 
 const QueryBar = () => {
   const [categoryList, setCatergoryList] = useState([]);
@@ -16,7 +16,7 @@ const QueryBar = () => {
     <section className="Queries">
       <nav className="QueryBar">
         <Link className="Tab-QueryBar" to="/">
-          all Categories
+          All Categories
         </Link>
         {categoryList.map((category) => {
           return (
@@ -25,7 +25,7 @@ const QueryBar = () => {
               className="Tab-QueryBar"
               to={`/categories/${category.slug}`}
             >
-              {category.slug} Games
+              {formatCategory(category.slug)} Games
             </Link>
           );
         })}

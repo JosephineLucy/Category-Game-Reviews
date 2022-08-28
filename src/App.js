@@ -30,7 +30,7 @@ function App() {
               src={user.avatar_url}
               alt={`${user.username} avatar`}
             />
-            <p>{user.username}</p>
+            <p className="User-Info-Username">{user.username}</p>
 
             <Link to={"/select-user"}>
               Not you? <br></br> Change user

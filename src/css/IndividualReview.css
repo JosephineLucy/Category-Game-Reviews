@@ -38,9 +38,15 @@
     border-radius: 5px;
 }
 
+.Up-Vote:hover {
+    color: white;
+    background-color: #d859d4;
+}
+
+
 .Up-Vote:active {
     color: white;
-    background-color: #597dd8;
+    background-color: #d859d4;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
@@ -53,9 +59,14 @@
     height: 40px;
 }
 
+.Down-Vote:hover {
+    color: white;
+    background-color: #d859d4;
+}
+
 .Down-Vote:active {
     color: white;
-    background-color: #597dd8;
+    background-color: #d859d4;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
