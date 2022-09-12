@@ -65,3 +65,35 @@
 .Review-Tab-Text {
     margin: 0;
 }
+
+
+@media only screen and (max-width: 450px){
+
+    .Review-Gallery{
+margin: 20px;
+    }
+
+    .Review-Card {
+        width: 350px;
+        }
+
+
+    .Review-Card-Header {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
+
+    .Review-Card-Owner {
+        margin-top: 25%;   
+    }
+    .Review-Card-Date {
+        margin-top: 30%;   
+    }
+    
+    .Review-Card-Category-Votes-Wrapper {
+        margin-top: 10px;
+    }
+}
+
+
