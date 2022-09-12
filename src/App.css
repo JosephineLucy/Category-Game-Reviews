@@ -46,6 +46,16 @@ header {
     margin: 5%;
 }
 
+.Sort-Reviews {
+    margin-bottom: 2%;
+}
+
+.select {
+    width: 300px;
+    font-size: 80%;
+}
+
+
 a:link { text-decoration: none; color: inherit; }
 
 a:visited { text-decoration: none; color: inherit;}
@@ -53,3 +63,20 @@ a:visited { text-decoration: none; color: inherit;}
 a:hover { text-decoration: none; color: inherit;}
 
 a:active { text-decoration: none; color: inherit;}
+
+/* responsive */
+@media only screen and (max-width: 450px){
+
+    header {
+        display: flex;
+        flex-direction: column-reverse;
+
+    }
+
+    .User-Info {
+    margin-left: 250px;
+    margin-right: 1px;
+    font-size: 10px;
+    padding: 0%;
+}
+}
