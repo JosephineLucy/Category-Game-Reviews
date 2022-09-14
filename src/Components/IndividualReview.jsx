@@ -99,7 +99,8 @@ const IndividualReview = () => {
       <section className="Vote-Buttons">
         <button
           className="Up-Vote"
-          onClick={() => {
+          onClick={(e) => {
+            e.currentTarget.disabled = true;
             voteClick(1);
           }}
         >
@@ -107,7 +108,8 @@ const IndividualReview = () => {
         </button>
         <button
           className="Down-Vote"
-          onClick={() => {
+          onClick={(e) => {
+            e.currentTarget.disabled = true;
             voteClick(-1);
           }}
         >
