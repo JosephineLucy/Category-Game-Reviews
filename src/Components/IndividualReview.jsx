@@ -14,7 +14,7 @@ const IndividualReview = () => {
   const [votes, setVotes] = useState(0);
   const [err, setErr] = useState(null);
   const [reviewLoading, setReviewLoading] = useState(true);
-
+  const [upvoteButton, setUpvoteButton] = useState(false);
   const [isDeleted, setIsDeleted] = useState(false);
 
   useEffect(() => {
@@ -91,30 +91,33 @@ const IndividualReview = () => {
           <CommentTab text="There are no comments yet, check back later or click below to be the first to comment!" />
         )}
       </section>
-      <AddComment setComments={setComments} comments={comments} ID={ID} />
       <section className="Review-Card-Category-Votes-Wrapper">
         <ReviewTab text={`category: ${review.category}`} />
         <ReviewTab text={`votes: ${votes + review.votes}`} />
       </section>
+      <AddComment setComments={setComments} comments={comments} ID={ID} />
       <section className="Vote-Buttons">
-        <button
-          className="Up-Vote"
-          onClick={(e) => {
-            e.currentTarget.disabled = true;
-            voteClick(1);
-          }}
-        >
-          Up Vote
-        </button>
-        <button
-          className="Down-Vote"
-          onClick={(e) => {
-            e.currentTarget.disabled = true;
-            voteClick(-1);
-          }}
-        >
-          Down Vote
-        </button>
+        {upvoteButton ? (
+          <button
+            className="Down-Vote"
+            onClick={(e) => {
+              voteClick(-1);
+              setUpvoteButton(!upvoteButton);
+            }}
+          >
+            Remove Vote
+          </button>
+        ) : (
+          <button
+            className="Up-Vote"
+            onClick={(e) => {
+              voteClick(1);
+              setUpvoteButton(!upvoteButton);
+            }}
+          >
+            Up Vote
+          </button>
+        )}
       </section>
     </section>
   );
