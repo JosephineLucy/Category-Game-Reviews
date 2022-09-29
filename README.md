@@ -1,4 +1,4 @@
-# NC Games
+# Category Game Reviews
 
 Welcome!
 
