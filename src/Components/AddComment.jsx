@@ -5,7 +5,6 @@ import { UserContext } from "../Context/User";
 
 export default function AddComment({ ID, comments, setComments }) {
   const [isClicked, setIsClicked] = useState(false);
-  const [removeForm, setRemoveForm] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [err, setErr] = useState(null);
   const [success, setSuccess] = useState(null);
