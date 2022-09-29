@@ -1,7 +1,8 @@
 
 body {
+    width: 100vw;
     background-color: rgb(250, 250, 250);
-    margin: 5%;
+padding: 0;
 }
 
 header {
@@ -13,6 +14,7 @@ header {
     text-decoration: none;
     padding: 5%;
   align-items: center;
+  margin: 0;
 }
 
 .App-Title {
@@ -22,9 +24,16 @@ header {
 }
 
 .User-Info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     color:rgba(0, 0, 0, 0.781);
     text-decoration: none;
     margin: 5%;
+    border: solid black 2px;
+    border-radius: 50%;
+    padding: 30px;
 }
 
 .User-Icon {

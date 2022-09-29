@@ -54,7 +54,7 @@ const IndividualReview = () => {
     return <p className="Loading-Page">Page loading, please wait...</p>;
 
   return (
-    <section>
+    <section className="Individual-Review">
       <img
         className="Review-Card-Image"
         src={review.review_img_url}

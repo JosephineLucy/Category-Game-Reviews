@@ -15,6 +15,9 @@ export default function SelectUser() {
 
   return (
     <div>
+      <section className="Select-User-Title">
+        <h1>Change user by selecting from below!</h1>
+      </section>
       <div className="User-List">
         {users.map((user) => {
           return (

@@ -11,9 +11,8 @@ import UserProfile from "./Components/UserProfile";
 
 function App() {
   const [user, setUser] = useState({
-    username: "Guest",
-    avatar_url:
-      "https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png",
+    username: "Guest User",
+    avatar_url: "https://i.imgur.com/4sqm8rs.png",
     kudos: 0,
   });
 
@@ -22,18 +21,20 @@ function App() {
       <div className="App">
         <header>
           <Link to={"/"}>
-            <h1 className="App-Title">NC Game Reviews</h1>
+            <img
+              className="App-Title"
+              src="https://i.imgur.com/BT02TWj.png"
+              alt="Category Logo"
+            ></img>
           </Link>
           <section className="User-Info">
-            <img
-              className="User-Icon"
-              src={user.avatar_url}
-              alt={`${user.username} avatar`}
-            />
-            <p className="User-Info-Username">{user.username}</p>
-
             <Link to={"/select-user"}>
-              Not you? <br></br> Change user
+              <img
+                className="User-Icon"
+                src={user.avatar_url}
+                alt={`${user.username} avatar`}
+              />
+              <p className="User-Info-Username">{user.username}</p>
             </Link>
           </section>
         </header>

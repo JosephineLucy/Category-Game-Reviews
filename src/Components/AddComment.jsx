@@ -1,20 +1,22 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import axios from "axios";
 import "../css/AddComment.css";
+import { UserContext } from "../Context/User";
 
 export default function AddComment({ ID, comments, setComments }) {
   const [isClicked, setIsClicked] = useState(false);
+  const [removeForm, setRemoveForm] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [err, setErr] = useState(null);
   const [success, setSuccess] = useState(null);
-  const [username, setUsername] = useState("");
   const [body, setBody] = useState("");
+  const { user } = useContext(UserContext);
 
   const commentToAdd = {
-    username: username,
+    username: user.username,
     body: body,
   };
-
+  console.log(user.username);
   function addComment(e) {
     e.preventDefault();
     setIsSending(true);
@@ -47,18 +49,6 @@ export default function AddComment({ ID, comments, setComments }) {
     return (
       <form className="Comment-Form" onSubmit={addComment}>
         <fieldset className="Form-Input">
-          <div>
-            <label htmlFor="username">Username: </label>
-            <input
-              required
-              placeholder="Enter your username here"
-              onChange={(e) => {
-                setUsername(e.target.value);
-              }}
-              id="username"
-              type="text"
-            />
-          </div>
           <div>
             <label htmlFor="body">Comment:</label>
             <input
