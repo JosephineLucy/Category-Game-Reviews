@@ -23,7 +23,7 @@ function App() {
           <Link to={"/"}>
             <img
               className="App-Title"
-              src="https://i.imgur.com/BT02TWj.png"
+              src="https://i.imgur.com/QSCosaV.png"
               alt="Category Logo"
             ></img>
           </Link>

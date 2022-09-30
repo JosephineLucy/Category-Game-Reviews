@@ -8,7 +8,7 @@ padding: 0;
 header {
     color: rgba(0, 0, 0, 0.936);
     background-color: white;
-    height: 10%;
+    height: 050px;
     display: flex;
     justify-content: space-between;
     text-decoration: none;
@@ -20,7 +20,7 @@ header {
 .App-Title {
     margin-left: 2%;
     font-size: 360%;
-    color: #597dd8;
+    height: 100px;
 }
 
 .User-Info {
