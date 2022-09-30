@@ -8,18 +8,19 @@
 
 
 .Tab-QueryBar {
-    border: solid grey 1px;
-    border-radius: 5px;
+    height: 30px;
     padding: 10px;
     margin: 5px;
-    height: 30px;
     text-decoration: none;
     color: black;
+    border: solid grey 2px;
+    border-radius: 5px;
+    
 }
 
 .Tab-QueryBar:hover {
-    color:white;
-    background-color: #597dd8;;
+    color:rgb(63, 63, 63);
+    background-color: #F9F871;;
 }
 
 .Sort-Reviews {
