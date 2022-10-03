@@ -10,11 +10,8 @@ export default function ReviewGallery({ orderBy, sortBy }) {
   const [reviewsPerPage] = useState(6);
 
   const indexOfLastPost = currentPage * reviewsPerPage;
-  // 10
   const indexOfFirstPost = indexOfLastPost - reviewsPerPage;
-  // 10 - 10 = 0
   const currentReviews = reviews.slice(indexOfFirstPost, indexOfLastPost);
-  // 0-9 in the array
 
   function paginate(pageNumber) {
     setCurrentPage(pageNumber);
