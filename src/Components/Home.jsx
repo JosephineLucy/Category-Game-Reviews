@@ -1,44 +1,19 @@
-import ReviewGallery from "./ReviewGallery";
-import { useState } from "react";
+import {Link} from "react-router-dom";
+import '../css/Home.css'
+
 const Home = () => {
-  const [orderBy, setOrderBy] = useState("desc");
-  const [sortBy, setSortBy] = useState("created_at");
-
-  function handleOrder(e) {
-    setOrderBy(e.target.value);
-  }
-
-  function handleSort(e) {
-    setSortBy(e.target.value);
-  }
-
   return (
-    <section>
-      <section className="Sort-Reviews">
-        <select
-          className="select"
-          name="order-by"
-          id="order-by"
-          onChange={(e) => handleOrder(e)}
-        >
-          <option value="">Order-by</option>
-          <option value="desc">Order-by descending</option>
-          <option value="asc">Order-by ascending</option>
-        </select>
-
-        <select
-          className="select"
-          name="sort-by"
-          id="sort-by"
-          onChange={(e) => handleSort(e)}
-        >
-          <option value="">Sort-by</option>
-          <option value="created_at">Date Created</option>
-          <option value="comment_count">Comment Count</option>
-          <option value="votes">Votes</option>
-        </select>
+    <section className="homepage">
+    <section className="hero-section">
+      <section className="hero-text-and-button">
+    <h1 className="hero-title">Category Game Reviews</h1>
+    <p className="hero-text">Let us help you decide on your next game by reading our reviews. You can also rate our reviews and leave comments to help other users make their choice.</p>
+<Link to='/reviews'><button className="all-reviews-button">Reviews</button></Link>
+        </section>
+        <section className="hero-image-container">
+          <img className="hero-image" src='https://media.tenor.com/-OiahIYVp_AAAAAC/player.gif' alt='cat-with-mouse'></img>
+        </section>
       </section>
-      <ReviewGallery orderBy={orderBy} sortBy={sortBy} />
     </section>
   );
 };

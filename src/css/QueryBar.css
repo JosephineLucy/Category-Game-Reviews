@@ -3,24 +3,20 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: #001e62;
+    margin-top:5px;
+    color: white;
 }
 
 
 
 .Tab-QueryBar {
-    height: 30px;
-    padding: 10px;
-    margin: 5px;
-    text-decoration: none;
-    color: black;
-    border: solid grey 2px;
-    border-radius: 5px;
-    
+    margin: 15px;
+    text-decoration: none;    
 }
 
 .Tab-QueryBar:hover {
-    color:rgb(63, 63, 63);
-    background-color: #F9F871;;
+text-decoration: underline;
 }
 
 .Sort-Reviews {
