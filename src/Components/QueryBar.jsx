@@ -15,7 +15,7 @@ const QueryBar = () => {
   return (
     <section className="Queries">
       <nav className="QueryBar">
-        <Link className="Tab-QueryBar" to="/">
+        <Link className="Tab-QueryBar" to="/reviews">
           All Categories
         </Link>
         {categoryList.map((category) => {

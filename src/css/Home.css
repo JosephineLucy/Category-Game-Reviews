@@ -1,13 +1,14 @@
 .homepage{
-display: flex;
-justify-content: center;
+    display: flex;
+    justify-content: center;
+    background-color: #FCFEFC;
+    min-height: 550px;
 }
 
 .hero-section {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 50px;
 }
 
 .hero-text-and-button{
@@ -19,12 +20,18 @@ justify-content: center;
 }
 
 .hero-title {
-    font-size: 4.5REM;
+    font-size: 4.5rem;
     margin:0;
 }
 
 .all-reviews-button {
-    margin-top: 50px;
+    margin-top: 30px;
+    background-color: #FE37A4;
+    padding: 10px;
+    border-radius: 10px;
+    border:none;
+    color: white;
+    border-style: solid;
 }
 
 .hero-image-container {
