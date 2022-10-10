@@ -1,0 +1,38 @@
+.homepage{
+display: flex;
+justify-content: center;
+}
+
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
+
+.hero-text-and-button{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: left;
+    width: 500px;
+}
+
+.hero-title {
+    font-size: 4.5REM;
+    margin:0;
+}
+
+.all-reviews-button {
+    margin-top: 50px;
+}
+
+.hero-image-container {
+    display: flex;
+    justify-content: center;
+    width: 600px;
+}
+
+.hero-image {
+    height: 300px;
+}
