@@ -3,6 +3,7 @@
 h1 {
     font-family: 'Sriracha';
     line-height: 1.1;
+    color: rgb(70, 70, 70);
 }
 
 h3 {
@@ -12,7 +13,6 @@ h3 {
 
 p, button {
     font-family: 'Vollkorn';
-    /* box-shadow: none !important; */
 }
 
 
@@ -28,8 +28,9 @@ header {
     display: flex;
     justify-content: space-between;
     text-decoration: none;
-  align-items: center;
-  margin: 0;
+    align-items: center;
+    margin: 0;
+    padding: 7px 30px;
 }
 
 .App {
@@ -42,6 +43,11 @@ header {
 .App-Title {
     font-size: 360%;
     height: 60px;
+    margin-left: 15px;
+}
+
+.header-right-icon {
+    height: 25px;
     margin-left: 15px;
 }
 

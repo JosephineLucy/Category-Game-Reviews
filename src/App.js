@@ -4,18 +4,29 @@ import QueryBar from "./Components/QueryBar";
 import IndividualReview from "./Components/IndividualReview";
 import SelectUser from "./Components/SelectUser";
 import { UserContext } from "./Context/User";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import Home from "./Components/Home";
-import ReviewsHome from './Components/ReviewsHome';
+import ReviewsHome from "./Components/ReviewsHome";
 import FilterByCategory from "./Components/FilterByCategory";
 import UserProfile from "./Components/UserProfile";
 
 function App() {
-  const [user, setUser] = useState({
-    username: "Guest User",
-    avatar_url: "https://i.imgur.com/4sqm8rs.png",
-    kudos: 0,
-  });
+  const [user, setUser] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    axios.get("https://josies-games.herokuapp.com/api/users").then((res) => {
+      setUser(res.data.users[0]);
+      setIsLoading(false);
+    });
+  }, []);
+
+  console.log(user, "<<<<user");
+
+  if (isLoading) {
+    return <p>Page Loading...</p>;
+  }
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
@@ -28,6 +39,30 @@ function App() {
               alt="Category Logo"
             ></img>
           </Link>
+          <section className="header-right">
+            <img
+              src="https://i.imgur.com/0sPugzX.png"
+              alt="search"
+              className="header-right-icon"
+              title="Search"
+            ></img>
+            <Link to={"/select-user"}>
+              <img
+                className="header-right-icon"
+                src={user.avatar_url}
+                alt="user"
+                title={`Signed in as ${user.username}`}
+              ></img>
+            </Link>
+            <Link to={"/"}>
+              <img
+                src="https://i.imgur.com/EBXR7I8.png"
+                alt="home"
+                className="header-right-icon"
+                title="Home"
+              ></img>
+            </Link>
+          </section>
         </header>
         <QueryBar />
         <Routes>
