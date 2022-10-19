@@ -4,7 +4,7 @@ import QueryBar from "./Components/QueryBar";
 import IndividualReview from "./Components/IndividualReview";
 import SelectUser from "./Components/SelectUser";
 import { UserContext } from "./Context/User";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Home from "./Components/Home";
 import ReviewsHome from './Components/ReviewsHome';
 import FilterByCategory from "./Components/FilterByCategory";
@@ -12,10 +12,18 @@ import UserProfile from "./Components/UserProfile";
 
 function App() {
   const [user, setUser] = useState({
-    username: "Guest User",
-    avatar_url: "https://i.imgur.com/4sqm8rs.png",
-    kudos: 0,
+    // username: "Guest User",
+    // avatar_url: "https://i.imgur.com/4sqm8rs.png",
+    // kudos: 0,
   });
+
+useEffect(()=>{
+  fetch('https://josies-games.herokuapp.com/api/users').then((response)=>{
+    return response.json()
+  }).then((data)=>{
+    setUser(data.users[0])
+  })
+}, [])
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
@@ -28,6 +36,12 @@ function App() {
               alt="Category Logo"
             ></img>
           </Link>
+          <section className="user-details">
+          <p>You are signed in as</p>
+          <img className="user-avatar" src={user.avatar_url} alt={user.username}></img>
+          <p className="username-homepage">{user.username}</p>
+          <Link to='/select-user'><button className="change-user-btn">Change User</button></Link>
+          </section>
         </header>
         <QueryBar />
         <Routes>

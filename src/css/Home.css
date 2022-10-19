@@ -1,6 +1,7 @@
 .homepage{
 display: flex;
 justify-content: center;
+max-width: 100vw;
 }
 
 .hero-section {

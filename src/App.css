@@ -14,11 +14,25 @@ margin: 0;
 header {
     color: rgba(0, 0, 0, 0.936);
     height: 100px;
+    max-width: 100vw;
     display: flex;
     justify-content: space-between;
     text-decoration: none;
   align-items: center;
-  margin: 0;
+  padding: 30px;
+}
+
+.user-avatar {
+    height: 20px;
+}
+
+.change-user-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10px;
+    width: 60px;
+    font-size: 0.6rem;
 }
 
 .App-Title {
