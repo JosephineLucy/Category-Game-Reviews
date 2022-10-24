@@ -32,6 +32,7 @@ function App() {
     <UserContext.Provider value={{ user, setUser }}>
       <div className="App">
         <header>
+          <section className="header-left">
           <Link to={"/"}>
             <img
               className="App-Title"
@@ -39,6 +40,7 @@ function App() {
               alt="Category Logo"
             ></img>
           </Link>
+          </section>
           <section className="header-right">
             <img
               src="https://i.imgur.com/0sPugzX.png"

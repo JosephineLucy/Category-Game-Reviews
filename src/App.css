@@ -113,10 +113,7 @@ a:active { text-decoration: none; color: inherit;}
 
     }
 
-    .User-Info {
-    margin-left: 250px;
-    margin-right: 1px;
-    font-size: 10px;
-    padding: 0%;
+    .header-right {
+        display: none;
 }
 }
