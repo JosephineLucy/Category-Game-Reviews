@@ -3,7 +3,18 @@
 h1 {
     font-family: 'Sriracha';
     line-height: 1.1;
+    color: rgb(70, 70, 70);
 }
+
+h3 {
+    font-family: 'Vollkorn';
+    font-weight:700;
+}
+
+p, button {
+    font-family: 'Vollkorn';
+}
+
 
 body {
     width: 100vw;
@@ -18,26 +29,16 @@ header {
     display: flex;
     justify-content: space-between;
     text-decoration: none;
-  align-items: center;
-  padding: 30px;
-}
-
-.user-avatar {
-    height: 20px;
-}
-
-.change-user-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10px;
-    width: 60px;
-    font-size: 0.6rem;
 }
 
 .App-Title {
     font-size: 360%;
     height: 60px;
+    margin-left: 15px;
+}
+
+.header-right-icon {
+    height: 25px;
     margin-left: 15px;
 }
 
@@ -82,8 +83,7 @@ font-size: 1.5REM;
 .footer {
     height: 80px;
     background-color: #001e62;
-    margin-top: 50px;
-    margin-bottom: 0;
+    margin-top: auto;
 }
 
 

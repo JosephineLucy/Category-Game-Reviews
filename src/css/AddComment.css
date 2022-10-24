@@ -23,18 +23,4 @@ label {
     margin: 5px;
 }
 
-.Button {
-    border: solid grey 1px;
-    border-radius: 5px;
-    padding: 10px;
-    margin-right: 12px;
-    margin-bottom: 12px;
-}
 
-Button {
-    border: solid grey 1px;
-    border-radius: 5px;
-    padding: 10px;
-    margin-right: 12px;
-    margin-bottom: 12px;
-}

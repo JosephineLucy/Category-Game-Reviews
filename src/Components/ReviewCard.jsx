@@ -14,7 +14,7 @@ export default function ReviewCard({ review }) {
         />
       </Link>
       <Link to={`/reviews/${review.review_id}`}>
-        <h2 className="Review-Card-Header">{review.title}</h2>
+        <h3 className="Review-Card-Header">{review.title}</h3>
       </Link>
       <section className="Review-Card-Owner-Date-Wrapper">
         <p className="Review-Card-Owner">
