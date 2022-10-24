@@ -2,6 +2,7 @@ import { UserContext } from "../Context/User";
 import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import "../css/SelectUser.css";
+import { Link } from "react-router-dom";
 
 export default function SelectUser() {
   const [users, setUsers] = useState([]);
@@ -28,6 +29,7 @@ export default function SelectUser() {
                 src={user.avatar_url}
                 alt={user.username}
               />
+              <Link to="/" >
               <button
                 className="button"
                 onClick={() => {
@@ -36,6 +38,7 @@ export default function SelectUser() {
               >
                 Select User
               </button>
+              </Link>
             </div>
           );
         })}

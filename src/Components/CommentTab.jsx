@@ -4,7 +4,7 @@ import { UserContext } from "../Context/User";
 import axios from "axios";
 import { formatDate } from "../api";
 
-const CommentTab = ({ text, author, id, date, setIsDeleted }) => {
+const CommentTab = ({ text, author, id, date, setIsDeleted, commentLength }) => {
   const { user } = useContext(UserContext);
   const [isSending, setIsSending] = useState(false);
   const [err, setErr] = useState(null);
@@ -36,7 +36,7 @@ const CommentTab = ({ text, author, id, date, setIsDeleted }) => {
   return (
     <section className="Comment-Tab">
       <p>{formattedDate}</p>
-      <p>{author} says:</p>
+      {commentLength > 0 ? <p>{author} says:</p> : null}
       <p className="Comment-Tab-Text">{text}</p>
       {user.username === author ? (
         <button

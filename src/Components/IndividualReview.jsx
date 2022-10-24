@@ -84,11 +84,12 @@ const IndividualReview = () => {
                 author={comment.author}
                 date={comment.created_at}
                 setIsDeleted={setIsDeleted}
+                commentLength={comments.length}
               />
             );
           })
         ) : (
-          <CommentTab text="There are no comments yet, check back later or click below to be the first to comment!" />
+          <CommentTab commentLength={comments.length} text="There are no comments yet, check back later or click below to be the first to comment!" />
         )}
       </section>
       <section className="Review-Card-Category-Votes-Wrapper">
