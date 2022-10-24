@@ -14,15 +14,15 @@ import UserProfile from "./Components/UserProfile";
 function App() {
   const [user, setUser] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  const [viewMore, setViewMore] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     axios.get("https://josies-games.herokuapp.com/api/users").then((res) => {
       setUser(res.data.users[0]);
       setIsLoading(false);
     });
   }, []);
-
-  console.log(user, "<<<<user");
 
   if (isLoading) {
     return <p>Page Loading...</p>;
@@ -40,6 +40,33 @@ function App() {
               alt="Category Logo"
             ></img>
           </Link>
+          </section>
+          <section className='header-menu'>
+            {viewMore ? <section><button onClick={()=> {setViewMore(false)}}>...</button></section> : <section className='view-more-menu'><section className="view-less-button"><button onClick={()=> {setViewMore(true)}}>X</button></section>
+            <section className="view-more-links"> <img
+              src="https://i.imgur.com/0sPugzX.png"
+              alt="search"
+              className="header-right-icon"
+              title="Search"
+            ></img>
+            <Link to={"/select-user"}>
+              <img
+                className="header-right-icon"
+                src={user.avatar_url}
+                alt="user"
+                title={`Signed in as ${user.username}`}
+              ></img>
+            </Link>
+            <Link to={"/"}>
+              <img
+                src="https://i.imgur.com/EBXR7I8.png"
+                alt="home"
+                className="header-right-icon"
+                title="Home"
+              ></img>
+            </Link>
+            </section>
+            </section>}
           </section>
           <section className="header-right">
             <img

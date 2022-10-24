@@ -22,7 +22,7 @@ const IndividualCategory = ({ orderBy, sortBy }) => {
   }, [orderBy, sortBy, category]);
 
   if (isLoading)
-    return <p className="Loading-Page">Page loading, please wait...</p>;
+    return <p>Page loading, please wait...</p>;
 
   return (
     <section>

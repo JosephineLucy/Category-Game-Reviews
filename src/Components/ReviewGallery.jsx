@@ -30,7 +30,7 @@ export default function ReviewGallery({ orderBy, sortBy }) {
   }, [orderBy, sortBy]);
 
   if (isLoading)
-    return <p className="Loading-Page">Page loading, please wait...</p>;
+    return <p >Page loading, please wait...</p>;
 
   return (
     <section>

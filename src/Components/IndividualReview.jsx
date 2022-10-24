@@ -51,7 +51,7 @@ const IndividualReview = () => {
   if (err) return <p>{err}</p>;
 
   if (reviewLoading)
-    return <p className="Loading-Page">Page loading, please wait...</p>;
+    return <p>Page loading, please wait...</p>;
 
   return (
     <section className="Individual-Review">
