@@ -9,9 +9,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
     max-width: 100vw;
     min-width: 300px;
+    padding: 20px;
 }
 
 .hero-text-and-button{
@@ -44,4 +45,21 @@
 
 .hero-image {
     height: 400px;
+    min-height: 150px;
+}
+
+
+/* responsive */
+@media only screen and (max-width: 450px){
+    .hero-image {
+        height: 200px;
+    }
+    .hero-title {
+        font-size: 3.2rem;
+        padding-top:2px;
+    }
+
+    .hero-text {
+        font-size: 0.7rem;
+    }
 }
