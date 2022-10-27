@@ -1,16 +1,19 @@
 .homepage{
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: #FCFEFC;
     min-height: 550px;
+    padding-top: 50px;
 }
 
 .hero-section {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap-reverse;
-    max-width: 100vw;
+    width: 100%;
+    max-width: 1100px;
     min-width: 300px;
     padding: 20px;
 }
@@ -20,12 +23,16 @@
     flex-direction: column;
     text-align: left;
     align-items: left;
-    width: 500px;
+    width: 600px;
 }
 
 .hero-title {
-    font-size: 5rem;
+    font-size: 6rem;
     margin:0;
+}
+
+.hero-text {
+    font-size: 1.3rem;
 }
 
 .all-reviews-button {

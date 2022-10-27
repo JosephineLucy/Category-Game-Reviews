@@ -5,6 +5,7 @@
     justify-content: center;
     background-color: #001e62;
     color: white;
+    font-size: 1.3rem;
 }
 
 
@@ -16,6 +17,7 @@
 
 .Tab-QueryBar:hover {
 text-decoration: underline;
+color: #FE37A4;
 }
 
 .Sort-Reviews {
@@ -27,4 +29,12 @@ text-decoration: underline;
 
 .select {
     margin-right: 10px;
+}
+
+
+@media only screen and (max-width: 450px){
+    .QueryBar {
+        font-size: 0.8rem;
+    }
+    
 }

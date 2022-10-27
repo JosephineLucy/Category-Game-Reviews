@@ -19,7 +19,6 @@ p, button {
 body {
 max-width: 100vw;
 padding: 0;
-margin: 0;
 }
 
 header {
@@ -117,6 +116,41 @@ a:active { text-decoration: none; color: inherit;}
     .header-right {
         display: none;
     }
+
+    .view-more-menu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .view-less-button-container{
+        display:flex;
+        justify-content: center;
+    }
+
+    .view-less-button {
+        width: 10px;
+        height: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+    }
+
+    .header-right-icon{
+        height: 15px !important;
+        width:15px !important;
+    }
+
+    .view-more-button{
+        width: 10px;
+        height: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        font-size: 0.5rem;
+    }
 }
    
 
@@ -124,4 +158,6 @@ a:active { text-decoration: none; color: inherit;}
     .header-menu {
         display: none;
     }
+
+   
 }

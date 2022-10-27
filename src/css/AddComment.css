@@ -3,24 +3,25 @@
     flex-direction: row;
     border: solid grey 1px;
     border-radius: 5px;
-    padding: 10px;
     margin-right: 12px;
     margin-bottom: 12px;
-
 }
 
 
 input {
     margin: 7px;
-    width: 200px;
 }
 
-.Input-Body {
-    width: 400px;
-}
 
 label {
     margin: 5px;
 }
 
 
+@media only screen and (max-width: 450px){
+.Form-Input {
+    width: 100%;
+    max-width: 320px;
+}
+
+}

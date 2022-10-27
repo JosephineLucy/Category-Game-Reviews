@@ -42,7 +42,7 @@ function App() {
           </Link>
           </section>
           <section className='header-menu'>
-            {viewMore ? <section><button onClick={()=> {setViewMore(false)}}>...</button></section> : <section className='view-more-menu'><section className="view-less-button"><button onClick={()=> {setViewMore(true)}}>X</button></section>
+            {viewMore ? <section className="view-more-button-container"><button className="view-more-button" onClick={()=> {setViewMore(false)}}>...</button></section> : <section className='view-more-menu'><section className="view-less-button-container"><button className="view-less-button" onClick={()=> {setViewMore(true)}}>-</button></section>
             <section className="view-more-links"> <img
               src="https://i.imgur.com/0sPugzX.png"
               alt="search"

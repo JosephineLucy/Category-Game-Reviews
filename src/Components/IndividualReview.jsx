@@ -54,6 +54,7 @@ const IndividualReview = () => {
     return <p>Page loading, please wait...</p>;
 
   return (
+    <section className="Individual-Review-Container">
     <section className="Individual-Review">
       <img
         className="Review-Card-Image"
@@ -120,6 +121,7 @@ const IndividualReview = () => {
           </button>
         )}
       </section>
+    </section>
     </section>
   );
 };
