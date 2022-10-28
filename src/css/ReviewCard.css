@@ -25,7 +25,7 @@
     object-fit: cover;
 }
 
-.Title-Owner-Date-Wrapper {
+.Review-Card-Wrapper {
     display: flex;
     flex-direction: column;
     width: 100%;

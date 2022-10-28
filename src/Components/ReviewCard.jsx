@@ -24,7 +24,9 @@ export default function ReviewCard({ review }) {
           <p className="Review-Card-Date">{formatDate(review.created_at)}</p>
         </section>
         <section className="Review-Card-Category-Votes-Wrapper">
-          <ReviewTab text={`category: ${review.category}`} />
+          <Link to={`/categories/${review.category}`}>
+            <ReviewTab text={`category: ${review.category}`} />
+          </Link>
           <ReviewTab text={`votes: ${review.votes}`} />
         </section>
       </section>
