@@ -33,40 +33,65 @@ function App() {
       <div className="App">
         <header>
           <section className="header-left">
-          <Link to={"/"}>
-            <img
-              className="App-Title"
-              src="https://i.imgur.com/QSCosaV.png"
-              alt="Category Logo"
-            ></img>
-          </Link>
-          </section>
-          <section className='header-menu'>
-            {viewMore ? <section className="view-more-button-container"><button className="view-more-button" onClick={()=> {setViewMore(false)}}>...</button></section> : <section className='view-more-menu'><section className="view-less-button-container"><button className="view-less-button" onClick={()=> {setViewMore(true)}}>-</button></section>
-            <section className="view-more-links"> <img
-              src="https://i.imgur.com/0sPugzX.png"
-              alt="search"
-              className="header-right-icon"
-              title="Search"
-            ></img>
-            <Link to={"/select-user"}>
-              <img
-                className="header-right-icon"
-                src={user.avatar_url}
-                alt="user"
-                title={`Signed in as ${user.username}`}
-              ></img>
-            </Link>
             <Link to={"/"}>
               <img
-                src="https://i.imgur.com/EBXR7I8.png"
-                alt="home"
-                className="header-right-icon"
-                title="Home"
+                className="App-Title"
+                src="https://i.imgur.com/QSCosaV.png"
+                alt="Category Logo"
               ></img>
             </Link>
-            </section>
-            </section>}
+          </section>
+          <section className="header-menu">
+            {viewMore ? (
+              <section className="view-more-menu">
+                <section className="view-less-button-container">
+                  <button
+                    className="view-less-button"
+                    onClick={() => {
+                      setViewMore(false);
+                    }}
+                  >
+                    -
+                  </button>
+                </section>
+                <section className="view-more-links">
+                  {" "}
+                  <img
+                    src="https://i.imgur.com/0sPugzX.png"
+                    alt="search"
+                    className="header-right-icon"
+                    title="Search"
+                  ></img>
+                  <Link to={"/select-user"}>
+                    <img
+                      className="header-right-icon"
+                      src={user.avatar_url}
+                      alt="user"
+                      title={`Signed in as ${user.username}`}
+                    ></img>
+                  </Link>
+                  <Link to={"/"}>
+                    <img
+                      src="https://i.imgur.com/EBXR7I8.png"
+                      alt="home"
+                      className="header-right-icon"
+                      title="Home"
+                    ></img>
+                  </Link>
+                </section>
+              </section>
+            ) : (
+              <section className="view-more-button-container">
+                <button
+                  className="view-more-button"
+                  onClick={() => {
+                    setViewMore(true);
+                  }}
+                >
+                  ...
+                </button>
+              </section>
+            )}
           </section>
           <section className="header-right">
             <img

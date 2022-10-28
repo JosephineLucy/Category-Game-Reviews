@@ -13,18 +13,20 @@ export default function ReviewCard({ review }) {
           alt={review.title}
         />
       </Link>
-      <Link to={`/reviews/${review.review_id}`}>
-        <h3 className="Review-Card-Header">{review.title}</h3>
-      </Link>
-      <section className="Review-Card-Owner-Date-Wrapper">
-        <p className="Review-Card-Owner">
-          by <span className="Review-Card-Owner-Name">{review.owner}</span>
-        </p>
-        <p className="Review-Card-Date">{formatDate(review.created_at)}</p>
-      </section>
-      <section className="Review-Card-Category-Votes-Wrapper">
-        <ReviewTab text={`category: ${review.category}`} />
-        <ReviewTab text={`votes: ${review.votes}`} />
+      <section className="Review-Card-Wrapper">
+        <Link to={`/reviews/${review.review_id}`}>
+          <h3 className="Review-Card-Header">{review.title}</h3>
+        </Link>
+        <section className="Review-Card-Owner-Date-Wrapper">
+          <p className="Review-Card-Owner">
+            by <span className="Review-Card-Owner-Name">{review.owner}</span>
+          </p>
+          <p className="Review-Card-Date">{formatDate(review.created_at)}</p>
+        </section>
+        <section className="Review-Card-Category-Votes-Wrapper">
+          <ReviewTab text={`category: ${review.category}`} />
+          <ReviewTab text={`votes: ${review.votes}`} />
+        </section>
       </section>
     </section>
   );

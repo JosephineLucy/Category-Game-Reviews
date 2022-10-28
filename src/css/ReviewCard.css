@@ -19,12 +19,18 @@
     color: #3A6794;
 }
 
-
-
 .Review-Card-Image {
     width: 100%;
     height: 300px;
     object-fit: cover;
+}
+
+.Title-Owner-Date-Wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
 }
 
 .Review-Card-Owner-Date-Wrapper {
@@ -83,13 +89,6 @@ margin: 20px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis; 
-    }
-
-    .Review-Card-Owner {
-        margin-top: 1%;   
-    }
-    .Review-Card-Date {
-        margin-top: 2%;   
     }
     
     .Review-Card-Category-Votes-Wrapper {
