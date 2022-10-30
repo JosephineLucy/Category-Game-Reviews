@@ -135,6 +135,8 @@ a:active { text-decoration: none; color: inherit;}
         justify-content: center;
         align-items: center;
         background-color: white;
+        border: none !important;
+        box-shadow: none !important;
     }
 
     .header-right-icon{
