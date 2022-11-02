@@ -17,6 +17,10 @@ label {
     margin: 5px;
 }
 
+.submit-btn, .reset-btn 
+{
+margin-right: 10px;
+}
 
 @media only screen and (max-width: 450px){
 .Form-Input {

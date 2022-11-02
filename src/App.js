@@ -36,7 +36,7 @@ function App() {
             <Link to={"/"}>
               <img
                 className="App-Title"
-                src="https://i.imgur.com/QSCosaV.png"
+                src="https://i.imgur.com/jwJSDYE.png"
                 alt="Category Logo"
               ></img>
             </Link>

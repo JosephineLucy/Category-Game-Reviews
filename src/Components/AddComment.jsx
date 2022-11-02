@@ -64,11 +64,14 @@ export default function AddComment({ ID, comments, setComments }) {
             />
           </div>
         </fieldset>
-        <button className="Button" type="submit">
+        <button className="submit-btn" type="submit">
           Submit comment
         </button>
-        <button id="Button" type="reset">
+        <button className="reset-btn" type="reset">
           Reset form
+        </button>
+        <button className="cancel-btn" onClick={()=>{setIsClicked(false)}} >
+          Cancel
         </button>
       </form>
     );
@@ -80,7 +83,7 @@ export default function AddComment({ ID, comments, setComments }) {
       {isSending ? <p>Your comment is being posted, please wait.</p> : null}
       {success ? <p>{success}</p> : null}
       <button
-        className="Button"
+        className="post-btn"
         onClick={(e) => {
           setIsClicked(true);
         }}
