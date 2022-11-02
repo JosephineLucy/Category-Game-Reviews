@@ -49,11 +49,12 @@
 .Vote-Buttons {
     display: flex;
     flex-direction: row;
+    padding-top: 20px;
 }
 
 .Up-Vote {
     color: white;
-    background-color: #597dd8;
+    background-color: #FE37A4;
     height: 40px;
     border-radius: 5px;
 }
