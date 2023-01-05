@@ -21,7 +21,7 @@ export default function ReviewGallery({ orderBy, sortBy }) {
     setIsLoading(true);
     axios
       .get(
-        `https://josies-games.herokuapp.com/api/reviews?order=${orderBy}&&sort_by=${sortBy}`
+        `https://category-game-reviews.onrender.com/api/reviews?order=${orderBy}&&sort_by=${sortBy}`
       )
       .then((res) => {
         setReviews(res.data.reviews);
@@ -29,8 +29,7 @@ export default function ReviewGallery({ orderBy, sortBy }) {
       });
   }, [orderBy, sortBy]);
 
-  if (isLoading)
-    return <p >Page loading, please wait...</p>;
+  if (isLoading) return <p>Page loading, please wait...</p>;
 
   return (
     <section>

@@ -21,13 +21,15 @@ export default function AddComment({ ID, comments, setComments }) {
     setIsSending(true);
     return axios
       .post(
-        `https://josies-games.herokuapp.com/api/reviews/${ID}/comments`,
+        `https://category-game-reviews.onrender.com/api/reviews/${ID}/comments`,
         commentToAdd
       )
       .then(() => {
         setIsClicked(false);
         axios
-          .get(`https://josies-games.herokuapp.com/api/reviews/${ID}/comments`)
+          .get(
+            `https://category-game-reviews.onrender.com/api/reviews/${ID}/comments`
+          )
           .then((res) => {
             setComments(res.data.comments);
             setIsSending(false);

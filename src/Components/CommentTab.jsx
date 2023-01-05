@@ -4,7 +4,14 @@ import { UserContext } from "../Context/User";
 import axios from "axios";
 import { formatDate } from "../api";
 
-const CommentTab = ({ text, author, id, date, setIsDeleted, commentLength }) => {
+const CommentTab = ({
+  text,
+  author,
+  id,
+  date,
+  setIsDeleted,
+  commentLength,
+}) => {
   const { user } = useContext(UserContext);
   const [isSending, setIsSending] = useState(false);
   const [err, setErr] = useState(null);
@@ -17,7 +24,7 @@ const CommentTab = ({ text, author, id, date, setIsDeleted, commentLength }) => 
     setIsSending(true);
     axios
       .delete(
-        `https://josies-games.herokuapp.com/api/comments/${e.target.value}`
+        `https://category-game-reviews.onrender.com/api/comments/${e.target.value}`
       )
       .then(() => {
         setIsSending(false);

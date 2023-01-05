@@ -18,10 +18,12 @@ function App() {
 
   useEffect(() => {
     setIsLoading(true);
-    axios.get("https://josies-games.herokuapp.com/api/users").then((res) => {
-      setUser(res.data.users[0]);
-      setIsLoading(false);
-    });
+    axios
+      .get("https://category-game-reviews.onrender.com/api/users")
+      .then((res) => {
+        setUser(res.data.users[0]);
+        setIsLoading(false);
+      });
   }, []);
 
   if (isLoading) {
