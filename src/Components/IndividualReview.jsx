@@ -19,13 +19,13 @@ const IndividualReview = () => {
 
   useEffect(() => {
     axios
-      .get(`https://josies-games.herokuapp.com/api/reviews/${ID}`)
+      .get(`https://category-game-reviews.onrender.com/api/reviews/${ID}`)
       .then((res) => {
         setReview(res.data.review);
         setReviewLoading(false);
       });
     axios
-      .get(`https://josies-games.herokuapp.com/api/reviews/${ID}/comments`)
+      .get(`https://category-game-reviews.onrender.com/api/reviews/${ID}/comments`)
       .then((res) => {
         setComments(res.data.comments);
       });
@@ -34,7 +34,7 @@ const IndividualReview = () => {
   function voteClick(number) {
     setVotes((current) => current + number);
     axios
-      .patch(`https://josies-games.herokuapp.com/api/reviews/${ID}`, {
+      .patch(`https://category-game-reviews.onrender.com/api/reviews/${ID}`, {
         inc_votes: number,
       })
       .then(() => {
