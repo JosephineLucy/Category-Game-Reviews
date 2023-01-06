@@ -1,11 +1,11 @@
 import axios from "axios";
 
 export function getCategoryList() {
-  return axios.get("https://josies-games.herokuapp.com/api/categories");
+  return axios.get("https://category-game-reviews.onrender.com/api/categories");
 }
 
 export function getReviews() {
-  return axios.get("https://josies-games.herokuapp.com/api/reviews");
+  return axios.get("https://category-game-reviews.onrender.com/api/reviews");
 }
 
 export function formatDate(date) {
