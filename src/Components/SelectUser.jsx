@@ -9,7 +9,7 @@ export default function SelectUser() {
   const { setUser } = useContext(UserContext);
 
   useEffect(() => {
-    axios.get("https://josies-games.herokuapp.com/api/users").then((res) => {
+    axios.get("https://category-game-reviews.onrender.com/api/users").then((res) => {
       setUsers(res.data.users);
     });
   }, []);
