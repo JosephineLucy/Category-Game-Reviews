@@ -2,7 +2,7 @@
 
 Welcome!
 
-This is a basic app for viewing board game reviews. On this app you can filter, up or down vote and comment on game reviews.
+This is an app for viewing board game reviews. On this app you can filter, up or down vote and comment on game reviews.
 
 You can view the hosted app here: https://lustrous-cobbler-21ae8e.netlify.app
 
