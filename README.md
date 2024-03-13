@@ -6,6 +6,6 @@ This is an app for viewing board game reviews. On this app you can filter, up or
 
 Here is a link to view the hosted app, https://lustrous-cobbler-21ae8e.netlify.app
 
-View the database and api set up in the backend for this app here: https://github.com/JosephineLucy/-BE-Category-Game-Reviews
+View the database and api set up in the backend for this app here: https://github.com/JosephineLucy/BE-Category-Game-Reviews
 
 Enjoy the repo!
