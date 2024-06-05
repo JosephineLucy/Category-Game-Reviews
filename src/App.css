@@ -88,12 +88,6 @@ header {
   width: 50px;
 }
 
-.footer {
-  height: 80px;
-  background-color: #001e62;
-  margin-top: auto;
-}
-
 a:link {
   text-decoration: none;
   color: inherit;

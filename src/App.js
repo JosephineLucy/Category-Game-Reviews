@@ -125,7 +125,7 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/select-user" element={<SelectUser />}></Route>
           <Route path="/categories/:category" element={<FilterByCategory />} />
-          <Route path="/reviews" element={<ReviewsHome />}></Route>
+          <Route path="/all-reviews" element={<ReviewsHome />}></Route>
           <Route path="/reviews/:ID" element={<IndividualReview />}></Route>
           <Route
             path={`/user/${user.username}`}

@@ -12,8 +12,8 @@ const Home = () => {
             can also rate our reviews and leave comments to help other users
             make their choice.
           </p>
-          <Link to="/reviews" className="all-reviews-button">
-            See reviews!
+          <Link to="/all-reviews" className="all-reviews-button">
+            Click here to see our reviews!{" "}
           </Link>
         </section>
         <section className="hero-image-container">

@@ -1,72 +1,71 @@
-.homepage{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #FCFEFC;
-    min-height: 550px;
-    padding-top: 50px;
+.homepage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fcfefc;
+  min-height: 550px;
+  padding-top: 50px;
 }
 
 .hero-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap-reverse;
-    width: 100%;
-    max-width: 1100px;
-    min-width: 300px;
-    padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  width: 100%;
+  max-width: 1100px;
+  min-width: 300px;
+  padding: 20px;
 }
 
-.hero-text-and-button{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    align-items: left;
-    width: 600px;
+.hero-text-and-button {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: left;
+  width: 600px;
 }
 
 .hero-title {
-    font-size: 5rem;
-    margin:0;
+  font-size: 5rem;
+  margin: 0;
 }
 
 .hero-text {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .all-reviews-button {
-    margin-top: 30px;
-    background-color: #FE37A4;
-    padding: 10px;
-    border-radius: 10px;
-    color: white !important;
-    text-align: center;
-    width: 150px;
+  margin-top: 30px;
+  background-color: #fe37a4;
+  padding: 10px;
+  border-radius: 10px;
+  color: white !important;
+  text-align: center;
+  max-width: 220px;
 }
 
 .hero-image-container {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .hero-image {
-    height: 400px;
-    min-height: 150px;
+  height: 400px;
+  min-height: 150px;
 }
 
-
 /* responsive */
-@media only screen and (max-width: 450px){
-    .hero-image {
-        height: 200px;
-    }
-    .hero-title {
-        font-size: 3.2rem;
-        padding-top:2px;
-    }
+@media only screen and (max-width: 450px) {
+  .hero-image {
+    height: 200px;
+  }
+  .hero-title {
+    font-size: 3.2rem;
+    padding-top: 2px;
+  }
 
-    .hero-text {
-        font-size: 0.7rem;
-    }
+  .hero-text {
+    font-size: 0.7rem;
+  }
 }
