@@ -17,7 +17,7 @@ const CommentTab = ({ text, author, id, date, setIsDeleted, commentLength }) => 
     setIsSending(true);
     axios
       .delete(
-        `https://josies-games.herokuapp.com/api/comments/${e.target.value}`
+        `https://category-game-reviews.onrender.com/api/comments/${e.target.value}`
       )
       .then(() => {
         setIsSending(false);

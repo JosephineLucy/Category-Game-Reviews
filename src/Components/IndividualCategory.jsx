@@ -13,7 +13,7 @@ const IndividualCategory = ({ orderBy, sortBy }) => {
     setIsLoading(true);
     axios
       .get(
-        `https://josies-games.herokuapp.com/api/reviews?category=${category}&&order=${orderBy}&&sort_by=${sortBy}`
+        `https://category-game-reviews.onrender.com/api/reviews?category=${category}&&order=${orderBy}&&sort_by=${sortBy}`
       )
       .then((res) => {
         setReviews(res.data.reviews);
