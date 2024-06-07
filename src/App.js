@@ -21,8 +21,8 @@ function App() {
     axios
       .get("https://category-game-reviews.onrender.com/api/users")
       .then((res) => {
-        setIsLoading(false);
         setUser(res.data.users[0]);
+        setIsLoading(false);
       });
   }, []);
 
