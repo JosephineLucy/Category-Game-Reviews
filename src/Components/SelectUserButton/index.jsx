@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
 import { UserContext } from "../../context/User";
 
 const SelectUserButton = () => {
-  const { avatar_url, username } = UserContext;
+  const { user } = useContext(UserContext);
+  const { avatar_url, username } = user;
 
   return (
     <Link to={"/select-user"}>

@@ -21,15 +21,14 @@ function App() {
     axios
       .get("https://category-game-reviews.onrender.com/api/users")
       .then((res) => {
-        setUser(res.data.users[0]);
         setIsLoading(false);
+        setUser(res.data.users[0]);
       });
   }, []);
 
   if (isLoading) {
     return <p>Page Loading...</p>;
   }
-
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <div className="App">
