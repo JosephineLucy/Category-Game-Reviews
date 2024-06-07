@@ -1,4 +1,4 @@
-import { UserContext } from "../Context/User";
+import { UserContext } from "../context/User";
 import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import "../css/SelectUser.css";
@@ -9,9 +9,11 @@ export default function SelectUser() {
   const { setUser } = useContext(UserContext);
 
   useEffect(() => {
-    axios.get("https://category-game-reviews.onrender.com/api/users").then((res) => {
-      setUsers(res.data.users);
-    });
+    axios
+      .get("https://category-game-reviews.onrender.com/api/users")
+      .then((res) => {
+        setUsers(res.data.users);
+      });
   }, []);
 
   return (
@@ -29,15 +31,15 @@ export default function SelectUser() {
                 src={user.avatar_url}
                 alt={user.username}
               />
-              <Link to="/" >
-              <button
-                className="button"
-                onClick={() => {
-                  setUser(user);
-                }}
-              >
-                Select User
-              </button>
+              <Link to="/">
+                <button
+                  className="button"
+                  onClick={() => {
+                    setUser(user);
+                  }}
+                >
+                  Select User
+                </button>
               </Link>
             </div>
           );

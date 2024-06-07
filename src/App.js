@@ -1,16 +1,16 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import QueryBar from "./Components/QueryBar";
-import IndividualReview from "./Components/IndividualReview";
-import SelectUser from "./Components/SelectUser";
-import { UserContext } from "./Context/User";
+import QueryBar from "./components/QueryBar";
+import IndividualReview from "./components/IndividualReview";
+import SelectUser from "./components/SelectUser";
+import { UserContext } from "./context/User";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Home from "./Components/Home";
-import ReviewsHome from "./Components/ReviewsHome";
-import FilterByCategory from "./Components/FilterByCategory";
-import UserProfile from "./Components/UserProfile";
-import AppHeader from "./Components/AppHeader";
+import Home from "./components/Home";
+import ReviewsHome from "./components/ReviewsHome";
+import FilterByCategory from "./components/FilterByCategory";
+import UserProfile from "./components/UserProfile";
+import AppHeader from "./components/AppHeader";
 
 function App() {
   const [user, setUser] = useState();

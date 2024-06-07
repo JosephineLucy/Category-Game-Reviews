@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import axios from "axios";
 import "../css/AddComment.css";
-import { UserContext } from "../Context/User";
+import { UserContext } from "../context/User";
 
 export default function AddComment({ ID, comments, setComments }) {
   const [isClicked, setIsClicked] = useState(false);
@@ -27,7 +27,9 @@ export default function AddComment({ ID, comments, setComments }) {
       .then(() => {
         setIsClicked(false);
         axios
-          .get(`https://category-game-reviews.onrender.com/api/reviews/${ID}/comments`)
+          .get(
+            `https://category-game-reviews.onrender.com/api/reviews/${ID}/comments`
+          )
           .then((res) => {
             setComments(res.data.comments);
             setIsSending(false);
@@ -70,7 +72,12 @@ export default function AddComment({ ID, comments, setComments }) {
         <button className="reset-btn" type="reset">
           Reset form
         </button>
-        <button className="cancel-btn" onClick={()=>{setIsClicked(false)}} >
+        <button
+          className="cancel-btn"
+          onClick={() => {
+            setIsClicked(false);
+          }}
+        >
           Cancel
         </button>
       </form>

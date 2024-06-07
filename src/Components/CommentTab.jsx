@@ -1,10 +1,17 @@
 import "../css/CommentTab.css";
 import { useContext, useState } from "react";
-import { UserContext } from "../Context/User";
+import { UserContext } from "../context/User";
 import axios from "axios";
 import { formatDate } from "../api";
 
-const CommentTab = ({ text, author, id, date, setIsDeleted, commentLength }) => {
+const CommentTab = ({
+  text,
+  author,
+  id,
+  date,
+  setIsDeleted,
+  commentLength,
+}) => {
   const { user } = useContext(UserContext);
   const [isSending, setIsSending] = useState(false);
   const [err, setErr] = useState(null);

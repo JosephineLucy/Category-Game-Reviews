@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { UserContext } from "../Context/User";
+import { UserContext } from "../context/User";
 import "../css/UserProfile.css";
 
 const UserProfile = () => {

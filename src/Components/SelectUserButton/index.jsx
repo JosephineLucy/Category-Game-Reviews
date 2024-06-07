@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { UserContext } from "../../Context/User";
+import { UserContext } from "../../context/User";
 
 const SelectUserButton = () => {
   const { avatar_url, username } = UserContext;
