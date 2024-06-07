@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
+import { UserContext } from "../../Context/User";
 
-const SelectUserButton = ({ user }) => {
+const SelectUserButton = () => {
+  const { avatar_url, username } = UserContext;
+
   return (
     <Link to={"/select-user"}>
       <img
         className="header-right-icon"
-        src={user.avatar_url}
+        src={avatar_url}
         alt="user"
-        title={`Signed in as ${user.username}`}
+        title={`Signed in as ${username}`}
       ></img>
     </Link>
   );

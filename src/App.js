@@ -34,7 +34,7 @@ function App() {
     <UserContext.Provider value={{ user, setUser }}>
       <div className="App">
         <header>
-          <AppHeader user={user} />
+          <AppHeader />
         </header>
         <QueryBar />
         <Routes>
