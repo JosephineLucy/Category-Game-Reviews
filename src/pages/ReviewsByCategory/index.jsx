@@ -1,7 +1,8 @@
-import IndividualCategory from "./IndividualCategory";
 import { useState } from "react";
-import SortBar from "./SortBar";
-const FilterByCategory = () => {
+import SortBar from "../../components/SortBar";
+import IndividualCategory from "../../components/IndividualCategory";
+
+const ReviewsByCategory = () => {
   const [orderBy, setOrderBy] = useState("desc");
   const [sortBy, setSortBy] = useState("created_at");
 
@@ -13,4 +14,4 @@ const FilterByCategory = () => {
   );
 };
 
-export default FilterByCategory;
+export default ReviewsByCategory;

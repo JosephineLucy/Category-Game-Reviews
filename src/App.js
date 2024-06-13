@@ -1,13 +1,13 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { UserContext } from "./context/User";
 import { useState } from "react";
-import Home from "./pages/Home";
+import AppHeader from "./components/AppHeader";
 import LinkBar from "./components/LinkBar";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
 import ReviewsHome from "./pages/ReviewsHome";
 import IndividualReview from "./components/IndividualReview";
-import FilterByCategory from "./components/FilterByCategory";
-import AppHeader from "./components/AppHeader";
-import Login from "./pages/Login";
+import ReviewsByCategory from "./pages/ReviewsByCategory";
 
 import "./App.css";
 
@@ -27,7 +27,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route
               path="/categories/:category"
-              element={<FilterByCategory />}
+              element={<ReviewsByCategory />}
             />
             <Route path="/all-reviews" element={<ReviewsHome />} />
             <Route path="/reviews/:ID" element={<IndividualReview />} />
