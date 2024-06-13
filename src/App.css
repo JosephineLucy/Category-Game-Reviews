@@ -33,7 +33,7 @@ header {
   padding: 7px 8px;
 }
 
-.App {
+.app {
   max-width: 100vw;
   min-height: 100vh;
   display: flex;

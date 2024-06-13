@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
 import QueryBar from "./components/QueryBar";
 import IndividualReview from "./components/IndividualReview";
 import SelectUser from "./components/SelectUser";
@@ -11,6 +10,7 @@ import ReviewsHome from "./components/ReviewsHome";
 import FilterByCategory from "./components/FilterByCategory";
 import UserProfile from "./components/UserProfile";
 import AppHeader from "./components/AppHeader";
+import "./app.css";
 
 function App() {
   const [user, setUser] = useState();
@@ -31,7 +31,7 @@ function App() {
   }
   return (
     <UserContext.Provider value={{ user, setUser }}>
-      <div className="App">
+      <div className="app">
         <header>
           <AppHeader />
         </header>
