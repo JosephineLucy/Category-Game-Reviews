@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { formatCategory, categoryService } from "../services/api";
 import "../css/QueryBar.css";
-import { getCategoryList, formatCategory } from "../api";
 
 const QueryBar = () => {
   const [categoryList, setCatergoryList] = useState([]);
 
   useEffect(() => {
-    getCategoryList().then((res) => {
+    categoryService.getCategories().then((res) => {
       setCatergoryList(res.data.categories);
     });
   }, []);

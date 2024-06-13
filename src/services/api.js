@@ -1,12 +1,16 @@
-import axios from "axios";
+import { apiServiceInstance } from "./axios";
 
-export function getCategoryList() {
-  return axios.get("https://category-game-reviews.onrender.com/api/categories");
-}
+export const usersService = {
+  getUsers: () => apiServiceInstance.get("/users"),
+};
 
-export function getReviews() {
-  return axios.get("https://category-game-reviews.onrender.com/api/reviews");
-}
+export const categoryService = {
+  getCategories: () => apiServiceInstance.get("/categories"),
+};
+
+export const reviewsService = {
+  getReviews: () => apiServiceInstance.get("/reviews"),
+};
 
 export function formatDate(date) {
   if (date === undefined) {

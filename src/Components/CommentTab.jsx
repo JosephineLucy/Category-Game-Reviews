@@ -1,8 +1,8 @@
-import "../css/CommentTab.css";
+import axios from "axios";
 import { useContext, useState } from "react";
 import { UserContext } from "../context/User";
-import axios from "axios";
-import { formatDate } from "../api";
+import { formatDate } from "../services/api";
+import "../css/CommentTab.css";
 
 const CommentTab = ({
   text,
