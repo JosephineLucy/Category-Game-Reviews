@@ -4,7 +4,7 @@ import { UserContext } from "../context/User";
 import "../css/AddComment.css";
 
 export default function AddComment({ ID, setComments }) {
-  const [isClicked, setIsClicked] = useState(false);
+  const [isFormOpen, setIsFormOpen] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [err, setErr] = useState(null);
   const [success, setSuccess] = useState(null);
@@ -25,7 +25,7 @@ export default function AddComment({ ID, setComments }) {
         commentToAdd
       )
       .then(() => {
-        setIsClicked(false);
+        setIsFormOpen(false);
         axios
           .get(
             `https://category-game-reviews.onrender.com/api/reviews/${ID}/comments`
@@ -39,14 +39,14 @@ export default function AddComment({ ID, setComments }) {
           });
       })
       .catch((err) => {
-        setIsClicked(false);
+        setIsFormOpen(false);
         setIsSending(false);
         setErr("Sorry, something went wrong. Please try again.");
         console.log(err);
       });
   }
 
-  if (isClicked) {
+  if (isFormOpen) {
     return (
       <form className="Comment-Form" onSubmit={addComment}>
         <fieldset className="Form-Input">
@@ -75,7 +75,7 @@ export default function AddComment({ ID, setComments }) {
         <button
           className="cancel-btn"
           onClick={() => {
-            setIsClicked(false);
+            setIsFormOpen(false);
           }}
         >
           Cancel
@@ -92,7 +92,7 @@ export default function AddComment({ ID, setComments }) {
       <button
         className="post-btn"
         onClick={(e) => {
-          setIsClicked(true);
+          setIsFormOpen(true);
         }}
       >
         Post a Comment
