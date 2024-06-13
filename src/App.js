@@ -2,12 +2,13 @@ import { Routes, Route } from "react-router-dom";
 import { UserContext } from "./context/User";
 import { useState } from "react";
 import Home from "./pages/Home";
-import QueryBar from "./components/QueryBar";
+import LinkBar from "./components/LinkBar";
 import IndividualReview from "./components/IndividualReview";
 import ReviewsHome from "./components/ReviewsHome";
 import FilterByCategory from "./components/FilterByCategory";
 import AppHeader from "./components/AppHeader";
 import Login from "./pages/Login";
+
 import "./App.css";
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
         <header>
           <AppHeader />
         </header>
-        <QueryBar />
+        <LinkBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
