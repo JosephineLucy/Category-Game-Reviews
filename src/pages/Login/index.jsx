@@ -1,5 +1,4 @@
-import { useEffect, useState, useContext } from "react";
-import { UserContext } from "../../context/User";
+import { useEffect, useState } from "react";
 import { loadUsers } from "./helpers";
 import UserTab from "../../components/UserTab";
 import "./styles.css";
@@ -7,7 +6,6 @@ import "./styles.css";
 export default function Login() {
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const { setUser } = useContext(UserContext);
 
   useEffect(() => {
     loadUsers(setIsLoading, setUsers);
