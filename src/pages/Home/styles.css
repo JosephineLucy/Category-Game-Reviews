@@ -1,4 +1,4 @@
-.landing-page {
+.home {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,7 +9,7 @@
   padding: 20px;
 }
 
-.landing-page__text-and-button {
+.home__left-content-wrapper {
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -17,12 +17,12 @@
   width: 600px;
 }
 
-.landing-page__title {
+.home__title {
   font-size: 5rem;
   margin: 0;
 }
 
-.landing-page__text {
+.home__text {
   font-size: 1rem;
 }
 
@@ -46,12 +46,12 @@
   .hero-image {
     height: 200px;
   }
-  .landing-page__title {
+  .home__title {
     font-size: 3.2rem;
     padding-top: 2px;
   }
 
-  .landing-page__text {
+  .home__text {
     font-size: 0.7rem;
   }
 }

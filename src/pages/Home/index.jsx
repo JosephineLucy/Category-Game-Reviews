@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import "./styles.css";
 
-const LandingPage = () => {
+const Home = () => {
   return (
-    <div className="landing-page">
-      <div className="landing-page__text-and-button">
-        <h1 className="landing-page__title">Category Game Reviews</h1>
-        <p className="landing-page__text">
+    <div className="home">
+      <div className="home__left-content-wrapper">
+        <h1 className="home__title">Category Game Reviews</h1>
+        <p className="home__text">
           Let us help you decide on your next game by reading our reviews. You
           can also rate our reviews and leave comments to help other users make
           their choice.
@@ -25,4 +25,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default Home;
