@@ -1,9 +1,9 @@
-import { useState, useContext } from "react";
 import axios from "axios";
-import "../css/AddComment.css";
+import { useState, useContext } from "react";
 import { UserContext } from "../context/User";
+import "../css/AddComment.css";
 
-export default function AddComment({ ID, comments, setComments }) {
+export default function AddComment({ ID, setComments }) {
   const [isClicked, setIsClicked] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [err, setErr] = useState(null);
@@ -86,9 +86,9 @@ export default function AddComment({ ID, comments, setComments }) {
 
   return (
     <div>
-      {err ? <p>{err}</p> : null}
-      {isSending ? <p>Your comment is being posted, please wait.</p> : null}
-      {success ? <p>{success}</p> : null}
+      {err && <p>{err}</p>}
+      {isSending && <p>Your comment is being posted, please wait.</p>}
+      {success && <p>{success}</p>}
       <button
         className="post-btn"
         onClick={(e) => {

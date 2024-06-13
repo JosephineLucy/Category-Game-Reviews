@@ -101,7 +101,7 @@ const IndividualReview = () => {
           <ReviewTab text={`category: ${review.category}`} />
           <ReviewTab text={`votes: ${votes + review.votes}`} />
         </section>
-        <AddComment setComments={setComments} comments={comments} ID={ID} />
+        <AddComment setComments={setComments} ID={ID} />
         <section className="Vote-Buttons">
           {upvoteButton ? (
             <button
