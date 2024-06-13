@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { formatCategory } from "./helpers";
 import { categoryService } from "../../services/api";
+import "./styles.css";
 
 const LinkBar = () => {
   const [categoryList, setCatergoryList] = useState([]);
