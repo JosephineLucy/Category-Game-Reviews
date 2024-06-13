@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { formatDate } from "../services/api";
+import { formatDate } from "./common/helpers";
 import ReviewTab from "./ReviewTab";
 import CommentTab from "./CommentTab";
 import AddComment from "./AddComment";

@@ -6,7 +6,6 @@ import QueryBar from "./components/QueryBar";
 import IndividualReview from "./components/IndividualReview";
 import ReviewsHome from "./components/ReviewsHome";
 import FilterByCategory from "./components/FilterByCategory";
-import UserProfile from "./components/UserProfile";
 import AppHeader from "./components/AppHeader";
 import Login from "./pages/Login";
 import "./App.css";
@@ -27,7 +26,6 @@ function App() {
           <Route path="/categories/:category" element={<FilterByCategory />} />
           <Route path="/all-reviews" element={<ReviewsHome />} />
           <Route path="/reviews/:ID" element={<IndividualReview />} />
-          <Route path="/user/:username" element={<UserProfile />} />
         </Routes>
       </div>
     </UserContext.Provider>

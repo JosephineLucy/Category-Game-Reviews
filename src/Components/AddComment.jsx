@@ -15,7 +15,7 @@ export default function AddComment({ ID, comments, setComments }) {
     username: user.username,
     body: body,
   };
-  console.log(user.username);
+
   function addComment(e) {
     e.preventDefault();
     setIsSending(true);
