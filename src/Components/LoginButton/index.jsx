@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import userImage from "../../user.jpg";
+import "./styles.css";
 
 const LoginButton = () => {
   return (
-    <Link to={"/select-user"}>
-      <img className="header-right-icon" src={userImage}></img>
+    <Link to={"/login"}>
+      <img className="login-button" src={userImage}></img>
     </Link>
   );
 };

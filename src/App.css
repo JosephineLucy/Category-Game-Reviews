@@ -24,7 +24,7 @@ body {
 
 header {
   color: rgba(0, 0, 0, 0.936);
-  height: 100px;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   text-decoration: none;
@@ -44,6 +44,10 @@ header {
   font-size: 360%;
   height: 60px;
 }
+
+/* .app-header__right-content-wrapper {
+  height: 60px;
+} */
 
 .sort-container {
   display: flex;
@@ -105,7 +109,7 @@ a:active {
     padding: 20px;
   }
 
-  .app-header--right {
+  .app-header__right-content-wrapper {
     display: none;
   }
 
@@ -129,11 +133,6 @@ a:active {
     background-color: white;
     border: none !important;
     box-shadow: none !important;
-  }
-
-  .header-right-icon {
-    height: 15px !important;
-    width: 15px !important;
   }
 
   .view-more-button {
