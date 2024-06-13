@@ -1,11 +1,11 @@
+import axios from "axios";
 import { Routes, Route } from "react-router-dom";
+import { UserContext } from "./context/User";
+import { useState, useEffect } from "react";
+import Home from "./pages/Home";
 import QueryBar from "./components/QueryBar";
 import IndividualReview from "./components/IndividualReview";
 import SelectUser from "./components/SelectUser";
-import { UserContext } from "./context/User";
-import { useState, useEffect } from "react";
-import axios from "axios";
-import Home from "./components/Home";
 import ReviewsHome from "./components/ReviewsHome";
 import FilterByCategory from "./components/FilterByCategory";
 import UserProfile from "./components/UserProfile";
