@@ -5,7 +5,7 @@ import "./styles.css";
 const LoginButton = () => {
   return (
     <Link to={"/login"}>
-      <img className="login-button" src={userImage}></img>
+      <img className="login-button" src={userImage} alt="login icon"></img>
     </Link>
   );
 };
