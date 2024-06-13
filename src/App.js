@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { UserContext } from "./context/User";
 import { useState } from "react";
 import Home from "./pages/Home";
@@ -15,21 +15,26 @@ function App() {
   const [user, setUser] = useState();
 
   return (
-    <UserContext.Provider value={{ user, setUser }}>
-      <div className="app">
-        <header>
-          <AppHeader />
-        </header>
-        <LinkBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/categories/:category" element={<FilterByCategory />} />
-          <Route path="/all-reviews" element={<ReviewsHome />} />
-          <Route path="/reviews/:ID" element={<IndividualReview />} />
-        </Routes>
-      </div>
-    </UserContext.Provider>
+    <BrowserRouter>
+      <UserContext.Provider value={{ user, setUser }}>
+        <div className="app">
+          <header>
+            <AppHeader />
+          </header>
+          <LinkBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route
+              path="/categories/:category"
+              element={<FilterByCategory />}
+            />
+            <Route path="/all-reviews" element={<ReviewsHome />} />
+            <Route path="/reviews/:ID" element={<IndividualReview />} />
+          </Routes>
+        </div>
+      </UserContext.Provider>
+    </BrowserRouter>
   );
 }
 
