@@ -8,7 +8,11 @@ const Pagination = ({ reviewsPerPage, totalReviews, paginate }) => {
   return (
     <nav className="pagination">
       {pageNumbers.map((number) => (
-        <button onClick={() => paginate(number)} className="pagination-link">
+        <button
+          onClick={() => paginate(number)}
+          className="pagination-link"
+          key={number}
+        >
           {number}
         </button>
       ))}

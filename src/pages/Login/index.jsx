@@ -20,7 +20,7 @@ export default function Login() {
       </div>
       <div className="login-page__user-list">
         {users.map((user) => {
-          return <UserTab user={user} />;
+          return <UserTab key={user.username} user={user} />;
         })}
       </div>
     </>
