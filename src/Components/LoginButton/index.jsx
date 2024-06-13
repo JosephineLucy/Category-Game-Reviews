@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import userImage from "../../user.jpg";
+import userImage from "../../assets/user.jpg";
 import "./styles.css";
 
 const LoginButton = () => {
