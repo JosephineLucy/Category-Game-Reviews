@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import { UserContext } from "../../context/User";
 import { loadUsers } from "./helpers";
+import UserTab from "../../components/UserTab";
 import "./styles.css";
 
 export default function Login() {
@@ -22,26 +22,7 @@ export default function Login() {
       </div>
       <div className="login-page__user-list">
         {users.map((user) => {
-          return (
-            <div key={user.username} className="User-Tab">
-              <p>{user.username}</p>
-              <img
-                className="User-Icon"
-                src={user.avatar_url}
-                alt={user.username}
-              />
-              <Link to="/">
-                <button
-                  className="button"
-                  onClick={() => {
-                    setUser(user);
-                  }}
-                >
-                  Select User
-                </button>
-              </Link>
-            </div>
-          );
+          return <UserTab user={user} />;
         })}
       </div>
     </>
