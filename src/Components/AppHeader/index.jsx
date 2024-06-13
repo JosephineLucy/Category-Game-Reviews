@@ -1,6 +1,6 @@
 import HomeButton from "../HomeButton";
 import SearchButton from "../SearchButton";
-import SelectUserButton from "../SelectUserButton";
+import LoginButton from "../LoginButton";
 
 const AppHeader = () => {
   return (
@@ -8,7 +8,7 @@ const AppHeader = () => {
       <HomeButton />
       <div className="app-header--right">
         <SearchButton />
-        <SelectUserButton />
+        <LoginButton />
       </div>
     </>
   );

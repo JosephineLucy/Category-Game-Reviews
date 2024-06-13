@@ -1,7 +1,6 @@
-import axios from "axios";
 import { Routes, Route } from "react-router-dom";
 import { UserContext } from "./context/User";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Home from "./pages/Home";
 import QueryBar from "./components/QueryBar";
 import IndividualReview from "./components/IndividualReview";
@@ -14,21 +13,7 @@ import "./app.css";
 
 function App() {
   const [user, setUser] = useState();
-  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    setIsLoading(true);
-    axios
-      .get("https://category-game-reviews.onrender.com/api/users")
-      .then((res) => {
-        setUser(res.data.users[0]);
-        setIsLoading(false);
-      });
-  }, []);
-
-  if (isLoading) {
-    return <p>Page Loading...</p>;
-  }
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <div className="app">
@@ -37,15 +22,12 @@ function App() {
         </header>
         <QueryBar />
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/select-user" element={<SelectUser />}></Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/select-user" element={<SelectUser />} />
           <Route path="/categories/:category" element={<FilterByCategory />} />
-          <Route path="/all-reviews" element={<ReviewsHome />}></Route>
-          <Route path="/reviews/:ID" element={<IndividualReview />}></Route>
-          <Route
-            path={`/user/${user.username}`}
-            element={<UserProfile />}
-          ></Route>
+          <Route path="/all-reviews" element={<ReviewsHome />} />
+          <Route path="/reviews/:ID" element={<IndividualReview />} />
+          <Route path="/user/:username" element={<UserProfile />} />
         </Routes>
       </div>
     </UserContext.Provider>
