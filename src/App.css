@@ -45,17 +45,6 @@ header {
   height: 60px;
 }
 
-.header-right-icon {
-  height: 25px;
-  margin-left: 15px;
-}
-
-.Loading-Page {
-  font-size: 170%;
-  text-align: center;
-  color: rgba(0, 0, 0, 0.781);
-}
-
 .sort-container {
   display: flex;
   justify-content: right;
