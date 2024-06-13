@@ -1,0 +1,13 @@
+.login-page__title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-page__user-list {
+  margin: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
