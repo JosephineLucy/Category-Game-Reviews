@@ -1,0 +1,12 @@
+.sort-bar {
+  display: flex;
+  justify-content: right;
+  margin-bottom: 2%;
+}
+
+.sort-bar__menus {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+}
