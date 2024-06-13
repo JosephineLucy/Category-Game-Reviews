@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../../context/User";
+import "./styles.css";
 
 const UserTab = ({ user }) => {
   const { setUser } = useContext(UserContext);

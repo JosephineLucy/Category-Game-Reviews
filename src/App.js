@@ -9,7 +9,7 @@ import FilterByCategory from "./components/FilterByCategory";
 import UserProfile from "./components/UserProfile";
 import AppHeader from "./components/AppHeader";
 import Login from "./pages/Login";
-import "./app.css";
+import "./App.css";
 
 function App() {
   const [user, setUser] = useState();
